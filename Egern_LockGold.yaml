@@ -1,0 +1,330 @@
+http_port: 8200
+socks_port: 8300
+allow_external_connections: false
+vif_only: false
+hide_vpn_icon: false
+geoip_db_url: https://github.com/Masaiki/GeoIP2-CN/raw/release/Country.mmdb
+compat_route: false
+include_all_networks: true
+include_apns: true
+include_cellular_services: false
+include_local_networks: false
+dns:
+  bootstrap:
+  - system
+  upstreams:
+    SecureDNS:
+    - ' https://cloudflare-dns.com/dns-query'
+  forward:
+  - wildcard:
+      match: '*'
+      value: SecureDNS
+  public_ip_lookup_url: https://ifconfig.me/ip
+proxies:
+- vmess:
+    name: ☯🅞🅗🅑☯-Happynew2024
+    server: 1.2.3.4
+    port: 80
+    user_id: 039fcc67-d081-40d2-c2c1-1367ff6ccde9
+    security: ''
+    legacy: false
+    tfo: true
+    udp_relay: true
+    transport:
+      ws:
+        path: /vuong5g
+        headers:
+          Host: lienquan.garena.vn:80
+policy_groups:
+- select:
+    name: Lựa chọn Thủ Công
+    policies:
+    - DIRECT
+    - ☯🅞🅗🅑☯-Happynew2024
+    icon: https://raw.githubusercontent.com/Repcz/Tool/X/Egern/Photo/ICON/Egern.png
+    hidden: false
+- select:
+    name: Nước Ngoài
+    policies:
+    - Việt Nam
+    - Hồng Kông
+    - Hoa Kỳ
+    - Singapore
+    - Nhật Bản
+    - Đài Loan
+    - Lựa chọn Thủ Công
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
+- select:
+    name: Truyền thông quốc tế
+    policies:
+    - Việt Nam
+    - Hồng Kông
+    - Hoa Kỳ
+    - Singapore
+    - Nhật Bản
+    - Đài Loan
+    - Lựa chọn Thủ Công
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+- select:
+    name: Dịch vụ Apple
+    policies:
+    - DIRECT
+    - Việt Nam
+    - Hồng Kông
+    - Hoa Kỳ
+    - Singapore
+    - Nhật Bản
+    - Đài Loan
+    - Lựa chọn Thủ Công
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png
+- select:
+    name: Microsoft
+    policies:
+    - Việt Nam
+    - Hồng Kông
+    - Hoa Kỳ
+    - Singapore
+    - Nhật Bản
+    - Đài Loan
+    - Lựa chọn Thủ Công
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+- select:
+    name: Google
+    policies:
+    - Việt Nam
+    - Hồng Kông
+    - Hoa Kỳ
+    - Singapore
+    - Nhật Bản
+    - Đài Loan
+    - Lựa chọn Thủ Công
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
+- select:
+    name: Telegram
+    policies:
+    - Việt Nam
+    - Hồng Kông
+    - Hoa Kỳ
+    - Singapore
+    - Nhật Bản
+    - Đài Loan
+    - Lựa chọn Thủ Công
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+- select:
+    name: Twitter
+    policies:
+    - Việt Nam
+    - Hồng Kông
+    - Hoa Kỳ
+    - Singapore
+    - Nhật Bản
+    - Đài Loan
+    - Lựa chọn Thủ Công
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png
+- select:
+    name: OpenAI
+    policies:
+    - Việt Nam
+    - Hồng Kông
+    - Hoa Kỳ
+    - Singapore
+    - Nhật Bản
+    - Đài Loan
+    - Lựa chọn Thủ Công
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
+- select:
+    name: Nền tảng chơi game
+    policies:
+    - Việt Nam
+    - Hồng Kông
+    - Hoa Kỳ
+    - Singapore
+    - Nhật Bản
+    - Đài Loan
+    - Lựa chọn Thủ Công
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
+- select:
+    name: Emby
+    policies:
+    - Lựa chọn thủ công
+    flatten: true
+    filter: ^(?=.*(.*))(?!.*((?i)Lời mời|Giảm giá|Chu kỳ|Trang web chính thức|Dịch vụ khách hàng|Trang web|Trang web|Mua lại|Đăng ký|Traffic|Hết hạn|Sân bay|Lần tiếp theo|Phiên bản|Địa chỉ chính thức|Sao lưu|Hết hạn|Đã hết hạn|Đã sử dụng|Liên hệ|E-mail|Lệnh công việc | Nhóm|Bán hàng|Thông báo|Bán lại|Phòng ngừa|Trong nước|🎮|(\b(GAME|USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\d{0,2}\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
+- select:
+    name: bilibili
+    policies:
+    - DIRECT
+    - Hồng Kông
+    - Đài Loan
+    - Lựa chọn Thủ Công
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili.png
+- select:
+    name: Chuyển hướng
+    policies:
+    - Việt Nam
+    - Hồng Kông
+    - Hoa Kỳ
+    - Singapore
+    - Nhật Bản
+    - Đài Loan
+    - Lựa chọn Thủ Công
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+- auto_test:
+    name: Việt Nam
+    policies:
+    - Lựa chọn Thủ Công
+    flatten: true
+    filter: ^(?=.*((?i)🇻🇳|Việt Nam|Hà Nội|Hồ Chí Minh|(\b(VN|VietNam)\b)))(?!.*((?i)Trở về|Trường học|Trò chơi|(\b(GAME)\b))).*$
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/VN.png
+- auto_test:
+    name: Hồng Kông
+    policies:
+    - Lựa chọn Thủ Công
+    flatten: true
+    filter: ^(?=.*((?i)🇭🇰|Hồng Kông|(\b(HK|Hong)\b)))(?!.*((?i)Trở về|Trường học|Trò chơi|(\b(GAME)\b))).*$
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+- auto_test:
+    name: Hoa Kỳ
+    policies:
+    - Lựa chọn Thủ Công
+    flatten: true
+    filter: ^(?=.*((?i)🇺🇸|Hoa Kỳ|Portland|Dallas|Oregon|Phoenix|Fremont|Thung lũng Silicon|Las Vegas|Los Angeles|San Jose|Santa Clara|Seattle|Chicago|(\b(US|United States)\b)))(?!.*((?i)Trở về|Trường học|Trò chơi|(\b(GAME)\b))).*$
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+- auto_test:
+    name: Singapore
+    policies:
+    - Lựa chọn Thủ Công
+    flatten: true
+    filter: ^(?=.*((?i)🇸🇬|Singapore|Singapura|(\b(SG|Singapore)\b)))(?!.*((?i)Trở về|Trường học|Trò chơi|(\b(GAME)\b))).*$
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+- auto_test:
+    name: Nhật Bản
+    policies:
+    - Lựa chọn Thủ Công
+    flatten: true
+    filter: ^(?=.*((?i)🇯🇵|Nhật Bản|Kawahi|Tokyo|Osaka|Izumi|Saitama|(\b(JP|Japan)\b)))(?!.*((?i)Trở về|Trường học|Trò chơi|(\b(GAME)\b))).*$
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+- auto_test:
+    name: Đài Loan
+    policies:
+    - Lựa chọn Thủ Công
+    flatten: true
+    filter: ^(?=.*((?i)🇹🇼|Đài Loan|(\b(TW|Tai|Taiwan)\b)))(?!.*((?i)Trở về|Trường học|Trò chơi|(\b(GAME)\b))).*$
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
+rules:
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/APNs.yaml
+    policy: Lựa chọn Thủ Công
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Reject.yaml
+    policy: REJECT
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/OpenAI.yaml
+    policy: OpenAI
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Github.yaml
+    policy: Microsoft
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/OneDrive.yaml
+    policy: Microsoft
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Microsoft.yaml
+    policy: Microsoft
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/YouTube.yaml
+    policy: Google
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Google.yaml
+    policy: Microsoft
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Telegram.yaml
+    policy: Telegram
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Twitter.yaml
+    policy: Twitter
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Game.yaml
+    policy: Nền tảng chơi game
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Emby.yaml
+    policy: Emby
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Bahamut.yaml
+    policy: Truyền thông quốc tế
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Disney.yaml
+    policy: Truyền thông quốc tế
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/HBO.yaml
+    policy: Truyền thông quốc tế
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Netflix.yaml
+    policy: Truyền thông quốc tế
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Spotify.yaml
+    policy: Truyền thông quốc tế
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/PrimeVideo.yaml
+    policy: Truyền thông quốc tế
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/TikTok.yaml
+    policy: Truyền thông quốc tế
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/ProxyGFW.yaml
+    policy: Truyền thông quốc tế
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Apple.yaml
+    policy: Dịch vụ Apple
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Bilibili.yaml
+    policy: Bilibili
+- rule_set:
+    match: https://github.com/Repcz/Tool/raw/X/Egern/Rules/Lan.yaml
+    policy: DIRECT
+- geoip:
+    match: CN
+    policy: Lựa chọn Thủ Công
+- default:
+    policy: chuyển hướng
+header_rewrites:
+- delete:
+    match: ^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$)
+    name: X-RevenueCat-ETag
+    type: request
+- delete:
+    match: ^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$)
+    name: x-revenuecat-etag
+    type: request
+scriptings:
+- http_response:
+    name: Locket_Gold
+    match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
+    script_url: https://raw.githubusercontent.com/vuong2023/shad/main/js/Locket.js
+    update_interval: 5
+    body_required: true
+mitm:
+  enabled: true
+  ca_p12: egern.p12
+  ca_passphrase: egern
+  hostnames:
+  - api.revenuecat.com
+  - buy.itunes.apple.com
+http_captures:
+- buy.itunes.apple.com
+- api.revenuecat.com
+modules:
+- name: soda
+  url: SODA
+  enabled: true
+- name: filmicpro
+  url: filmicpro
+  enabled: true
+- name: YouTube.Enhance.sgmodule
+  url: https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule
+  enabled: true

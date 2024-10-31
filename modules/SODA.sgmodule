@@ -1,0 +1,8 @@
+#!name=SODA
+#!desc=SOSA crack
+
+[Script]
+soda = type=http-response, pattern=^https?:\/\/purchase-soda-api\.snow\.me\/v\d\/purchase\/subscription\/subscriber\/status, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/soda.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% purchase-soda-api.snow.me

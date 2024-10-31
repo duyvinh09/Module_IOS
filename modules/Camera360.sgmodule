@@ -1,0 +1,16 @@
+#!name=Camera360 pro
+#!desc=Tep Lenh Crack 
+#!icon=https://raw.githubusercontent.com/LovedGM/Quantumult-X-TuBiao/main/zishi-cs/zs13.png
+#!homepage=http://ohoang7.hexat.com/
+#!author=ohoang7
+#!url=https://gitlab.com/ohoang7/ohb/-/raw/main/Shadowrocket/module/camera360.sgmodule
+
+
+[MITM]
+hostname = %APPEND% *.camera360.com
+
+
+
+
+[Script]
+camera360 = type=http-response, pattern=^https?:\/\/.*\.camera360\.com\/(api\/(order\/purchase|iap\/check-receipt)|v\d\/operational-positions), requires-body=true, max-size=3145728, script-path=https://gitlab.com/ohoang7/ohb/-/raw/main/Script/camera360.js, timeout=60, script-update-interval=0
