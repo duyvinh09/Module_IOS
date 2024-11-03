@@ -20,7 +20,7 @@ var duyvinh09 = {
       purchase_date: "2005-01-09T10:10:14Z",
       store: "app_store"
   },
-  vuong2023 = {
+  locketGold = {
       grace_period_expires_date: null,
       purchase_date: "2005-01-09T10:10:14Z",
       product_identifier: "com.duyvinh09.premium.yearly",
@@ -29,8 +29,8 @@ var duyvinh09 = {
 const match = Object.keys(mapping).find(e => ua.includes(e));
 if (match) {
   let [e, s] = mapping[match];
-  s ? (vuong2023.product_identifier = s, obj.subscriber.subscriptions[s] = duyvinh09) : obj.subscriber.subscriptions["com.duyvinh09.premium.yearly"] = duyvinh09, obj.subscriber.entitlements[e] = vuong2023
-} else obj.subscriber.subscriptions["com.duyvinh09.premium.yearly"] = duyvinh09, obj.subscriber.entitlements.pro = vuong2023;
+  s ? (locketGold.product_identifier = s, obj.subscriber.subscriptions[s] = duyvinh09) : obj.subscriber.subscriptions["com.duyvinh09.premium.yearly"] = duyvinh09, obj.subscriber.entitlements[e] = locketGold
+} else obj.subscriber.subscriptions["com.duyvinh09.premium.yearly"] = duyvinh09, obj.subscriber.entitlements.pro = locketGold;
 $done({
   body: JSON.stringify(obj)
 });
