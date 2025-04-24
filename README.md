@@ -19,9 +19,4 @@
 - Sau khi cài đặt module, chuyển sang tab **Nhà**.
 - Bật VPN để kích hoạt và sử dụng module.
 
-## Video Hướng Dẫn
-Dưới đây là video hướng dẫn chi tiết cách thực hiện:
-
-![Video Hướng Dẫn](HuongDan.MOV)
-
 Chúc bạn thành công!
