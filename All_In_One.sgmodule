@@ -16,7 +16,6 @@ AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 #hostname = sub.store
 Sub-Store Core=type=http-request,pattern=^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))),script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js,requires-body=true,timeout=120
 Sub-Store Simple=type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js,requires-body=true
-
 Sub-Store Sync=type=cron,cronexp=0 0 * * *,wake-system=1,timeout=120,script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/cron-sync-artifacts.min.js
 #************************************#
 
@@ -50,16 +49,26 @@ PicsArt = type=http-request https://api.picsart.com/gw-v2/shop/subscription/appl
 WinkVip = type=http-response,pattern=^https?:\/\/api-sub\.meitu\.com\/v2\/user\/vip_info_by_group\.json,requires-body=1,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/WinkVipCrack.js
 #************************************#
 
-#Revenuecat
-#hostname = api.revenuecat.com
-revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/Crack.js, requires-body=true, max-size=-1, timeout=60
-
-deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/deleteHeader_v102.js, timeout=60
-#************************************#
-
 #Truecaller
 #hostname = premium*.truecaller.com
 Truecaller = type=http-response,pattern=^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/TrueCaller.js
+#************************************#
+
+#Lightroom
+#hostname =  photos.adobe.io
+Lightroom = type=http-response,pattern=^https:\/\/photos\.adobe\.io\/v\d\/accounts,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/lightroom.js,script-update-interval=-1
+#************************************#
+
+#Nhaccuatui
+#hostname =  graph.nhaccuatui.com
+Nhaccuatui = type=http-response,pattern=^https:\/\/graph\.nhaccuatui\.com\/.*\/users\/info,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DungHoang120401/Nobita/refs/heads/main/Scripts/nhaccuatui.js,script-update-interval=-1
+#************************************#
+
+#Revenuecat
+#hostname = api.revenuecat.com
+revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/Crack.js, requires-body=true, max-size=-1, timeout=60
+deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/deleteHeader_v102.js, timeout=60
+#************************************#
 
 [Url Rewrite]
 # ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject-img
@@ -79,4 +88,4 @@ Truecaller = type=http-response,pattern=^https://premium-(.+)\.truecaller\.com/v
 youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$,requires-body=1,max-size=-1,binary-body-mode=1,engine=auto,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js,argument="{"lyricLang":"vi","captionLang":"vi","blockUpload":true,"blockImmersive":true,"debug":false}"
 
 [MITM]
-hostname = %APPEND%, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, s.youtube.com, -redirector*.googlevideo.com, premium*.truecaller.com, sub.store, api.revenuecat.com, buy.itunes.apple.com, spclient.wg.spotify.com, api-mobile.soundcloud.com, api.picsart.com, us-central1-alight-creative.cloudfunctions.net, api-sub.meitu.com
+hostname = %APPEND%, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, s.youtube.com, -redirector*.googlevideo.com, premium*.truecaller.com, sub.store, api.revenuecat.com, buy.itunes.apple.com, spclient.wg.spotify.com, api-mobile.soundcloud.com, api.picsart.com, us-central1-alight-creative.cloudfunctions.net, api-sub.meitu.com, graph.nhaccuatui.com, photos.adobe.io
