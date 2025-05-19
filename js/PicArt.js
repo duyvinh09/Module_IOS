@@ -34,4 +34,4 @@ let objc = {
     }
   ]
 }
-$done({ response: {body: JSON.stringify(objc),status: 200} }); 
+$done({ response: {body: JSON.stringify(objc),status: 200} });
