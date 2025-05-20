@@ -1,7 +1,7 @@
 /******************************
 Chức năng: Wink Mở khóa tư cách thành viên vĩnh viễn
 Phiên bản ứng dụng: 1.8.90
-Người viết kịch bản: Hausd0rff
+Người viết kịch bản: obj
 Thời gian cập nhật: 07-11-2024
 Tuyên bố sử dụng: Không Buôn Bán Vì Nó Miễn Phí
 *******************************
@@ -12,14 +12,14 @@ Tuyên bố sử dụng: Không Buôn Bán Vì Nó Miễn Phí
 hostname = api-sub.meitu.com
 *******************************/
 
-var __encode = "t.me/duyvinh09";
+var lienHe = "t.me/duyvinh09";
 var _a = {};
-(function (_0xd642x1) {
-    _0xd642x1._decode = "http://www.sojson.com/javascriptobfuscator.html";
+(function (options) {
+    options._decode = "http://www.sojson.com/javascriptobfuscator.html";
 })(_a);
 var body = $response.body;
-var hausd0rff = JSON.parse(body);
-hausd0rff.data = {
+var obj = JSON.parse(body);
+obj.data = {
     active_sub_type: 2,
     account_type: 1,
     sub_type_name: "续期",
@@ -51,7 +51,7 @@ hausd0rff.data = {
     show_renew_flag: true
 };
 $done({
-    body: JSON.stringify(hausd0rff)
+    body: JSON.stringify(obj)
 });
 ;
 ;
@@ -71,7 +71,7 @@ $done({
     };
     _0xcbd8x7 = _0xcbd8x5("删除", _0xcbd8x5(_0xcbd8x5("版本号，js会定", "期弹窗，"), "还请支持我们的工作"));
     try {
-        _0xcbd8x3 = __encode;
+        _0xcbd8x3 = lienHe;
         if (typeof _0xcbd8x3 === _0xcbd8x8 || _0xcbd8x3 !== _0xcbd8x5("jsjia", "mi.com")) {
         _0xcbd8x6(_0xcbd8x7);
         }
