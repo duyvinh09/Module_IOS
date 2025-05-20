@@ -51,7 +51,7 @@ SoundCloudGo+=type=http-response,pattern=https://api-mobile.soundcloud.com/confi
 
 #AlightMotion
 #hostname = us-central1-alight-creative.cloudfunctions.net
-AlightMotion = type=http-response https://us-central1-alight-creative.cloudfunctions.net/getAccountStatusAndLicenses script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/AlightMotion.js, requires-body=true, timeout=60
+AlightMotion = type=http-response,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/AlightMotion.js,pattern=^https:\/\/us-central1-alight-creative\.cloudfunctions\.net\/getAccountStatusAndLicenses,max-size=131072,requires-body=true,timeout=10,enable=true
 #************************************#
 
 #PicsArt
