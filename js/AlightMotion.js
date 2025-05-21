@@ -3,19 +3,19 @@ var objc = JSON.parse($response.body);
 objc = {
     "result": {
         "result": "success",
-        "msTime": 1709216800128,
+        "msTime": 1704758400000,
         "accountCreatedMillis": null,
         "licenses": [
         {
             "benefits": [
-            "RemoveWatermark",
-            "MemberEffects",
-            "ProjectPackageSharing",
-            "FutureMemberFeatures",
-            "AdvancedEasing",
-            "CameraObjects",
-            "LayerParenting",
-            "CloudStorageLowTier"
+                "RemoveWatermark",
+                "MemberEffects",
+                "ProjectPackageSharing",
+                "FutureMemberFeatures",
+                "AdvancedEasing",
+                "CameraObjects",
+                "LayerParenting",
+                "CloudStorageLowTier"
             ],
             "type": "subscription",
             "store": "apple_app_store",
@@ -25,7 +25,7 @@ objc = {
             "period": "1y",
             "label": null,
             "details": null,
-            "expires": 1740926942000,
+            "expires": 32662137600000,
             "valid": true,
             "linkStatus": "linked-current"
         }
