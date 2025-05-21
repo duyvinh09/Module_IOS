@@ -1,10 +1,4 @@
 /******************************
-Chức năng: Wink Mở khóa tư cách thành viên vĩnh viễn
-Phiên bản ứng dụng: 1.8.90
-Người viết kịch bản: obj
-Thời gian cập nhật: 07-11-2024
-Tuyên bố sử dụng: Không Buôn Bán Vì Nó Miễn Phí
-*******************************
 [rewrite_local]
 # > Wink Mở khóa tư cách thành viên vĩnh viễn
 ^https?:\/\/api-sub\.meitu\.com\/v2\/user\/vip_info_by_group\.json url script-response-body
