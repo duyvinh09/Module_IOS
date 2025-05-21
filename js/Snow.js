@@ -12,20 +12,20 @@ for (const key of Object.keys(list)) {
         duyvinh09.result = {
         "products": [
             {
-            "managed": true,
-            "status": "ACTIVE",
-            "startDate": times,
-            "productId": list[key].id,
-            "expireDate": 4092599349000
+                "managed": true,
+                "status": "ACTIVE",
+                "startDate": times,
+                "productId": list[key].id,
+                "expireDate": 32662137600000
             }
         ],
         "tickets": [
             {
-            "managed": true,
-            "status": "ACTIVE",
-            "startDate": times,
-            "productId": list[key].id,
-            "expireDate": 4092599349000
+                "managed": true,
+                "status": "ACTIVE",
+                "startDate": times,
+                "productId": list[key].id,
+                "expireDate": 32662137600000
             }
         ],
         "activated": true

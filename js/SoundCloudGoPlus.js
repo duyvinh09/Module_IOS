@@ -55,4 +55,3 @@ obj.features = [
 // Chuyển đổi đối tượng thành JSON và gửi phản hồi
 body = JSON.stringify(obj);
 $done({ body });
-arrow

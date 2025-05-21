@@ -21,50 +21,50 @@ const features = [
 
 var obj;
 switch ($request.url) {
-case findUrl(/subscriptions\/status/):
-    obj = {
-        expire: "2030-01-01T01:01:01Z",
-        start: "2024-01-07T02:32:04Z",
-        paymentProvider: "Apple",
-        isExpired: false,
-        isGracePeriodExpired: false,
-        subscriptionStatus: "INITIAL_BUY",
-        inAppPurchaseAllowed: true,
-        product: {
-        id: "renewable.gold.annual",
-        sku: "renewable.gold.annual",
-        contentType: "subscription",
-        productType: "GoldYearly",
-        isFreeTrial: true
-        },
-        tier: { id: "gold", feature: features }
-    }
-    break;
-case findUrl(/products\/apple/):
-    obj = {
-"tier": [
-    {
-    "id": "gold",
-    "product": [
-        {
-        "productType": "GoldYearly",
-        "id": "renewable.gold.annual",
-        "sku": "renewable.gold.annual",
-        "contentType": "subscription",
-        "rank": 6,
-        "paymentProvider": "Apple",
-        "clientProductMetadata": {
-            "selectionRank": 5,
-            "displayOrder": 5,
-            "isEntitledPremiumScreenProduct": false
+    case findUrl(/subscriptions\/status/):
+        obj = {
+            expire: "9999-01-09T01:01:01Z",
+            start: "2024-01-07T02:32:04Z",
+            paymentProvider: "Apple",
+            isExpired: false,
+            isGracePeriodExpired: false,
+            subscriptionStatus: "INITIAL_BUY",
+            inAppPurchaseAllowed: true,
+            product: {
+                id: "renewable.gold.annual",
+                sku: "renewable.gold.annual",
+                contentType: "subscription",
+                productType: "GoldYearly",
+                isFreeTrial: true
+            },
+            tier: { id: "gold", feature: features }
         }
+        break;
+    case findUrl(/products\/apple/):
+        obj = {
+            "tier": [
+                {
+                "id": "gold",
+                "product": [
+                    {
+                    "productType": "GoldYearly",
+                    "id": "renewable.gold.annual",
+                    "sku": "renewable.gold.annual",
+                    "contentType": "subscription",
+                    "rank": 6,
+                    "paymentProvider": "Apple",
+                    "clientProductMetadata": {
+                        "selectionRank": 5,
+                        "displayOrder": 5,
+                        "isEntitledPremiumScreenProduct": false
+                    }
+                    }
+                ],
+                "feature": features,
+                "rank": 5
+                }
+            ]
         }
-    ],
-    "feature": features,
-    "rank": 5
-    }
-]
-}
     break;
 }
 $done({body: JSON.stringify(obj)});
