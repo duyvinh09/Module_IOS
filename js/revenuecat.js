@@ -56,7 +56,7 @@ const mapping = {
   'Pillow': ['premium'],
   'DecibelMeter/': ['Premium'],
   '1Blocker': ['premium'],
-  // 'VSCO': ['membership'],
+  'VSCO': ['membership'],
   'UTC': ['Entitlement.Pro'],
   '%E8%AC%8E%E5%BA%95%E9%BB%91%E8%86%A0': ['Entitlement.Pro'],
   '%E8%AC%8E%E5%BA%95%E6%99%82%E9%90%98': ['Entitlement.Pro'],
