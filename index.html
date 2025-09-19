@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock App Premium bằng ShadowRocket</title>
+    <meta name="description" content="Hướng dẫn Unlock App Premium trên iPhone bằng ShadowRocket với link Config và Module.">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" type="image/png" href="./assets/img/shadowrocket.webp"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .copy-btn:hover {
+            transform: scale(1.05);
+        }
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+    <style>
+        :root {
+            --all-in-app: #93c5fd; /* Tailwind blue-300 (kept var name for compatibility) */
+            --all-in-app-strong: #2563eb; /* blue-600 for emphasis */
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-blue-50 via-white to-white min-h-screen text-gray-900">
+
+    <!-- Decorative Background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <!-- Soft gradient blobs -->
+        <div class="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-gradient-to-tr from-blue-200 to-sky-200 blur-3xl opacity-50"></div>
+        <div class="absolute -bottom-28 -right-24 w-96 h-96 rounded-full bg-gradient-to-tr from-sky-200 to-indigo-200 blur-3xl opacity-50"></div>
+        <div class="absolute top-1/3 -right-16 w-64 h-64 rounded-full bg-gradient-to-br from-indigo-200 to-blue-200 blur-3xl opacity-40"></div>
+
+        <!-- Subtle dot grid -->
+        <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 1px 1px, rgba(37,99,235,0.15) 1px, transparent 0); background-size: 24px 24px;"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+        <div id="toastContent" class="opacity-0 translate-y-2 transition-all duration-300">
+            <div class="pointer-events-none bg-gradient-to-r from-blue-500 to-sky-400 text-black rounded-full px-4 py-2 shadow-xl ring-1 ring-blue-300/60 flex items-center gap-2">
+                <span class="text-lg">✨</span>
+                <span id="toastMessage" class="text-sm font-semibold">Đã sao chép!</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="relative z-10 max-w-md mx-auto px-4 py-16">
+        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-200" data-aos="fade-up">
+            <div class="text-center mb-8">
+                <div class="mx-auto mb-3 w-12 h-12 rounded-xl flex items-center justify-center" style="background-color: var(--all-in-app)">
+                    <span class="text-2xl">🚀</span>
+                </div>
+                <h1 class="text-3xl font-bold mb-2 text-gray-900">Unlock App <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-400">Premium</span></h1>
+                <p class="text-gray-600">Dành cho iPhone sử dụng ứng dụng <span class="font-semibold">ShadowRocket</span></p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Links (Config & Module) -->
+                <div class="bg-gray-50 rounded-xl p-5 border border-gray-200">
+                    <h2 class="text-xl font-semibold mb-4 flex items-center text-gray-900">
+                        <i data-feather="link" class="mr-2"></i> Link cấu hình ShadowRocket
+                    </h2>
+                    <div class="space-y-5">
+                        <!-- Config link -->
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-1">Link Config shadowrocket_basic (.conf)</label>
+                            <div class="flex items-center bg-gray-100 rounded-lg p-3">
+                                <span class="flex-1 overflow-x-auto text-sm">https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/shadowrocket_basic.conf</span>
+                                <button class="copy-btn ml-2 bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-300 focus:outline-none text-white px-3 py-1 rounded-lg transition-all" onclick="copyToClipboard('https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/shadowrocket_basic.conf')">
+                                    <i data-feather="copy" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                            <a href="shadowrocket://config/add/https%3A%2F%2Fraw.githubusercontent.com%2Fduyvinh09%2FModule_IOS%2Frefs%2Fheads%2Fmain%2Fshadowrocket_basic.conf" class="mt-2 w-full bg-gradient-to-r from-blue-500 to-sky-400 hover:from-blue-600 hover:to-sky-500 focus:ring-2 focus:ring-blue-300 focus:outline-none text-black font-semibold py-2 px-4 rounded-lg transition-all inline-flex items-center justify-center gap-2">
+                                <i data-feather="file" class="w-5 h-5"></i>
+                                <span>Mở trong ShadowRocket</span>
+                            </a>
+                        </div>
+
+                        <!-- Module link -->
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-1">Link Module All_In_One (.sgmodule)</label>
+                            <div class="flex items-center bg-gray-100 rounded-lg p-3">
+                                <span class="flex-1 overflow-x-auto text-sm">https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/All_In_One.sgmodule</span>
+                                <button class="copy-btn ml-2 bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-300 focus:outline-none text-white px-3 py-1 rounded-lg transition-all" onclick="copyToClipboard('https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/All_In_One.sgmodule')">
+                                    <i data-feather="copy" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                            <a href="shadowrocket://install?module=https%3A%2F%2Fraw.githubusercontent.com%2Fduyvinh09%2FModule_IOS%2Frefs%2Fheads%2Fmain%2FAll_In_One.sgmodule" class="mt-2 w-full bg-gradient-to-r from-blue-500 to-sky-400 hover:from-blue-600 hover:to-sky-500 focus:ring-2 focus:ring-blue-300 focus:outline-none text-black font-semibold py-2 px-4 rounded-lg transition-all inline-flex items-center justify-center gap-2">
+                                <i data-feather="plus" class="w-5 h-5"></i>
+                                <span>Mở trong ShadowRocket</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instruction Steps -->
+                <div class="bg-gray-50 rounded-xl p-5 border border-gray-200">
+                    <h2 class="text-xl font-semibold mb-4 flex items-center text-gray-900">
+                        <i data-feather="list" class="mr-2"></i> Hướng dẫn cài đặt
+                    </h2>
+                    <ol class="space-y-6 list-decimal list-inside">
+                        <li class="text-gray-700">
+                            Tải ứng dụng <span class="font-semibold text-blue-600">ShadowRocket</span> từ <span class="font-semibold text-blue-600">App Store</span> (nếu chưa có, bạn cần tìm <span class="font-semibold">tài khoản</span> để tải).
+                            <div class="mt-2 w-full rounded-lg border border-dashed border-blue-300 bg-blue-50/40 flex items-center justify-center text-xs text-gray-500">
+                                <button type="button" class="block w-full" onclick="openImageModal('./assets/steps/step1.jpg')">
+                                    <!-- Chèn ảnh hướng dẫn bước 1 (./assets/steps/step1.jpg) -->
+                                    <img src="./assets/steps/step1.jpg" alt="Hướng dẫn bước 1" class="w-full h-auto max-h-64 object-contain">
+                                </button>
+                            </div>
+                        </li>
+                        <li class="text-gray-700">
+                            Bấm vào lần lượt <span class="font-semibold text-blue-600">2 nút ở trên</span> để nhập tự động vào app <span class="font-semibold">ShadowRocket</span>, hoặc có thể bấm <span class="font-semibold">Sao chép</span> thủ công và dán vào ở <span class="font-semibold text-blue-600">Tab Cấu Hình</span>.
+                            <div class="mt-2 w-full rounded-lg border border-dashed border-blue-300 bg-blue-50/40 flex items-center justify-center text-xs text-gray-500">
+                                <!-- Chèn ảnh hướng dẫn bước 2 (./assets/steps/step2.jpg) -->
+                                <button type="button" class="block w-full" onclick="openImageModal('./assets/steps/step2.jpg')">
+                                    <img src="./assets/steps/step2.jpg" alt="Hướng dẫn bước 2" class="w-full h-auto max-h-64 object-contain">
+                                </button>
+                            </div>
+                        </li>
+                        <li class="text-gray-700">
+                            Chọn cấu hình <span class="font-semibold text-blue-600">"shadowrocket_basic.conf"</span> → <span class="font-semibold">Sử dụng Config</span>.
+                            <div class="mt-2 w-full rounded-lg border border-dashed border-blue-300 bg-blue-50/40 flex items-center justify-center text-xs text-gray-500">
+                                <!-- Chèn ảnh hướng dẫn bước 3 (./assets/steps/step3.jpg) -->
+                                <button type="button" class="block w-full" onclick="openImageModal('./assets/steps/step3.jpg')">
+                                    <img src="./assets/steps/step3.jpg" alt="Hướng dẫn bước 3" class="w-full h-auto max-h-64 object-contain">
+                                </button>
+                            </div>
+                        </li>
+                        <li class="text-gray-700">
+                            Nhấn vào biểu tượng chữ <span class="font-semibold">ℹ️</span> màu xanh cạnh cấu hình <span class="font-semibold text-blue-600">"shadowrocket_basic.conf"</span> → vào mục <span class="font-semibold text-blue-600">Giải mã HTTPS</span> và bật <span class="font-semibold">Giải mã HTTPS</span> lên.
+                            <div class="mt-2 w-full rounded-lg border border-dashed border-blue-300 bg-blue-50/40 flex items-center justify-center text-xs text-gray-500">
+                                <!-- Chèn ảnh hướng dẫn bước 4 (./assets/steps/step4.jpg) -->
+                                <button type="button" class="block w-full" onclick="openImageModal('./assets/steps/step4.jpg')">
+                                    <img src="./assets/steps/step4.jpg" alt="Hướng dẫn bước 4" class="w-full h-auto max-h-64 object-contain">
+                                </button>
+                            </div>
+                        </li>
+                        <li class="text-gray-700">
+                            Hệ thống yêu cầu <span class="font-semibold text-blue-600">Tạo chứng chỉ CA mới</span> → Chọn <span class="font-semibold">Tạo chứng chỉ CA mới</span> → <span class="font-semibold">Cài đặt Chứng chỉ CA vào Hệ thống</span> → <span class="font-semibold">Cho phép</span> → <span class="font-semibold">Đóng</span>.
+                            <div class="mt-2 w-full rounded-lg border border-dashed border-blue-300 bg-blue-50/40 flex items-center justify-center text-xs text-gray-500">
+                                <!-- Chèn ảnh hướng dẫn bước 5 (./assets/steps/step5.jpg) -->
+                                <button type="button" class="block w-full" onclick="openImageModal('./assets/steps/step5.jpg')">
+                                    <img src="./assets/steps/step5.jpg" alt="Hướng dẫn bước 5" class="w-full h-auto max-h-64 object-contain">
+                                </button>
+                            </div>
+                        </li>
+                        <li class="text-gray-700">
+                            Vào <span class="font-semibold text-blue-600">CÀI ĐẶT (Trên máy)</span> → <span class="font-semibold">Cài đặt chung</span> → <span class="font-semibold text-blue-600">Quản lý VPN & Thiết bị</span> rồi tiến hành <span class="font-semibold">cài đặt chứng chỉ</span> vừa tạo.
+                            <div class="mt-2 w-full rounded-lg border border-dashed border-blue-300 bg-blue-50/40 flex items-center justify-center text-xs text-gray-500">
+                                <!-- Chèn ảnh hướng dẫn bước 6 (./assets/steps/step6.jpg) -->
+                                <button type="button" class="block w-full" onclick="openImageModal('./assets/steps/step6.jpg')">
+                                    <img src="./assets/steps/step6.jpg" alt="Hướng dẫn bước 6" class="w-full h-auto max-h-64 object-contain">
+                                </button>
+                            </div>
+                        </li>
+                        <li class="text-gray-700">
+                            Sau khi cài đặt xong, vào tiếp mục <span class="font-semibold text-blue-600">CÀI ĐẶT CHUNG</span> → <span class="font-semibold">GIỚI THIỆU</span> → <span class="font-semibold text-blue-600">CÀI ĐẶT TIN CẬY CHỨNG NHẬN</span> → Sau đó <span class="font-semibold">bật Shadowrocket</span> lên.
+                            <div class="mt-2 w-full rounded-lg border border-dashed border-blue-300 bg-blue-50/40 flex items-center justify-center text-xs text-gray-500">
+                                <!-- Chèn ảnh hướng dẫn bước 7 (./assets/steps/step7.jpg) -->
+                                <button type="button" class="block w-full" onclick="openImageModal('./assets/steps/step7.jpg')">
+                                    <img src="./assets/steps/step7.jpg" alt="Hướng dẫn bước 7" class="w-full h-auto max-h-64 object-contain">
+                                </button>
+                            </div>
+                        </li>
+                        <li class="text-gray-700">
+                            Quay lại <span class="font-semibold text-blue-600">ShadowRocket</span> → <span class="font-semibold">bật kết nối</span> là sử dụng các app <span class="font-semibold text-blue-600">Premium</span> thành công.
+                            <div class="mt-2 w-full rounded-lg border border-dashed border-blue-300 bg-blue-50/40 flex items-center justify-center text-xs text-gray-500">
+                                <!-- Chèn ảnh hướng dẫn bước 8 (./assets/steps/step8.jpg) -->
+                                <button type="button" class="block w-full" onclick="openImageModal('./assets/steps/step8.jpg')">
+                                    <img src="./assets/steps/step8.jpg" alt="Hướng dẫn bước 8" class="w-full h-auto max-h-64 object-contain">
+                                </button>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- Supported Apps -->
+            <div class="mt-6 bg-gray-50 rounded-xl p-5 border border-gray-200">
+                <h2 class="text-xl font-semibold mb-4 flex items-center text-gray-900">
+                    <i data-feather="smartphone" class="mr-2"></i> Ứng dụng được hỗ trợ
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Alight Motion -->
+                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">AM</div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Alight Motion</div>
+                            <div class="text-xs text-gray-600">Mở khoá Pro, không watermark</div>
+                        </div>
+                    </div>
+                    <!-- BeautyPlus -->
+                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">BP</div>
+                        <div>
+                            <div class="font-semibold text-gray-900">BeautyPlus</div>
+                            <div class="text-xs text-gray-600">Mở khoá Vip</div>
+                        </div>
+                    </div>
+                    <!-- CamScanner -->
+                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">CS</div>
+                        <div>
+                            <div class="font-semibold text-gray-900">CamScanner</div>
+                            <div class="text-xs text-gray-600">Mở khoá Vip</div>
+                        </div>
+                    </div>
+                    <!-- KineMaster -->
+                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">KM</div>
+                        <div>
+                            <div class="font-semibold text-gray-900">KineMaster</div>
+                            <div class="text-xs text-gray-600">Xoá watermark, asset store</div>
+                        </div>
+                    </div>
+                    <!-- Lightroom -->
+                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">LR</div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Lightroom</div>
+                            <div class="text-xs text-gray-600">Mở khoá cao cấp, sync preset</div>
+                        </div>
+                    </div>
+                    <!-- Locket -->
+                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">LO</div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Locket</div>
+                            <div class="text-xs text-gray-600">Lên LocketGold, quay 5s,..</div>
+                        </div>
+                    </div>
+                    <!-- PicsArt -->
+                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">PA</div>
+                        <div>
+                            <div class="font-semibold text-gray-900">PicsArt</div>
+                            <div class="text-xs text-gray-600">Premium đầy đủ tính năng</div>
+                        </div>
+                    </div>
+                    <!-- Snow -->
+                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">SN</div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Snow</div>
+                            <div class="text-xs text-gray-600">Mở khoá Vip</div>
+                        </div>
+                    </div>
+                    <!-- SoundCloud Go+ -->
+                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">SC</div>
+                        <div>
+                            <div class="font-semibold text-gray-900">SoundCloud</div>
+                            <div class="text-xs text-gray-600">Trải nghiệm không Go+</div>
+                        </div>
+                    </div>
+                    <!-- Spotify -->
+                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">SP</div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Spotify</div>
+                            <div class="text-xs text-gray-600">Loại bỏ quảng cáo, nghe nhạc chất lượng cao.</div>
+                        </div>
+                    </div>
+                    <!-- VSCO -->
+                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">VS</div>
+                        <div>
+                            <div class="font-semibold text-gray-900">VSCO</div>
+                            <div class="text-xs text-gray-600">Filter full, studio nâng cao</div>
+                        </div>
+                    </div>
+                    <!-- Wink -->
+                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">WI</div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Wink</div>
+                            <div class="text-xs text-gray-600">Mở khoá Vip (không đăng nhập)</div>
+                        </div>
+                    </div>
+                    <!-- YouTube -->
+                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">YT</div>
+                        <div>
+                            <div class="font-semibold text-gray-900">YouTube</div>
+                            <div class="text-xs text-gray-600">Chặn quảng cáo, tính năng phát nền</div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 mt-3">Danh sách các app sẽ được cập nhật liên tục. Nếu sử dụng không được, có thể App đó đã bị Fix.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Footer -->
+    <div class="relative z-10 max-w-md mx-auto px-4 pb-6">
+        <div class="text-center text-sm text-gray-500">
+            © 2025 <a href="https://me.momo.vn/dinhduyvinh" target="_blank" class="text-blue-600 hover:text-blue-700 hover:underline">Đinh Duy Vinh</a>. All rights reserved.
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/70" onclick="closeImageModal()"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="relative max-w-3xl w-full">
+                <button type="button" class="absolute -top-3 -right-3 bg-white text-gray-800 rounded-full shadow px-2 py-1 text-sm font-semibold" onclick="closeImageModal()">✕</button>
+                <img id="modalImage" src="" alt="Xem ảnh hướng dẫn" class="w-full h-auto max-h-[80vh] rounded-lg shadow-lg object-contain bg-white">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize AOS and Feather Icons
+        AOS.init();
+        feather.replace();
+
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Đã sao chép thành công');
+            }).catch(err => {
+                console.error('Lỗi khi sao chép: ', err);
+            });
+        }
+
+        // Toast helper
+        let __toastTimer;
+        function showToast(message) {
+            var content = document.getElementById('toastContent');
+            var textEl = document.getElementById('toastMessage');
+            if (!content || !textEl) return;
+            textEl.textContent = message;
+            content.classList.remove('opacity-0', 'translate-y-2');
+            content.classList.add('opacity-100', 'translate-y-0');
+            if (__toastTimer) clearTimeout(__toastTimer);
+            __toastTimer = setTimeout(function() {
+                content.classList.add('opacity-0', 'translate-y-2');
+                content.classList.remove('opacity-100', 'translate-y-0');
+            }, 1800);
+        }
+
+        // Image Modal helpers
+        function openImageModal(src) {
+            var modal = document.getElementById('imageModal');
+            var img = document.getElementById('modalImage');
+            if (!modal || !img) return;
+            img.src = src;
+            modal.classList.remove('hidden');
+        }
+        function closeImageModal() {
+            var modal = document.getElementById('imageModal');
+            var img = document.getElementById('modalImage');
+            if (!modal || !img) return;
+            modal.classList.add('hidden');
+            img.src = '';
+        }
+    </script>
+</body>
+</html>
