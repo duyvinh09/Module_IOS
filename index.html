@@ -67,6 +67,21 @@
                         <i data-feather="link" class="mr-2"></i> Link cấu hình ShadowRocket
                     </h2>
                     <div class="space-y-5">
+                        <!-- Notice -->
+                        <div class="rounded-xl p-4 border border-amber-200 bg-amber-50">
+                            <div class="flex items-start">
+                                <div class="mt-0.5 mr-3">
+                                    <div class="w-6 h-6 rounded-md flex items-center justify-center" style="background-color: var(--locket-yellow)">
+                                        <i data-feather="alert-triangle" class="w-4 h-4 text-black"></i>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-gray-800">
+                                    <p class="font-semibold mb-1">Lưu ý</p>
+                                    <p>Muốn sử dụng premium thì <span class="font-semibold">phải bật VPN trong ShadowRocket</span>. Không dùng nữa thì <span class="font-semibold">tắt đi</span> để tránh hao pin và nóng máy.</p>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Config link -->
                         <div>
                             <label class="block text-sm text-gray-600 mb-1">Link Config shadowrocket_basic (.conf)</label>
@@ -107,6 +122,17 @@
                     <ol class="space-y-6 list-decimal list-inside">
                         <li class="text-gray-700">
                             Tải ứng dụng <span class="font-semibold text-blue-600">ShadowRocket</span> từ <span class="font-semibold text-blue-600">App Store</span> (nếu chưa có, bạn cần tìm <span class="font-semibold">tài khoản</span> để tải).
+                            <div class="mt-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                                <p class="text-sm font-semibold text-blue-800 mb-2">📱 Trang lấy tài khoản tải ShadowRocket miễn phí:</p>
+                                <div class="space-y-1 text-xs">
+                                    <a href="https://idapple.csadata4g.me/" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800 hover:underline">• idapple.csadata4g.me</a>
+                                    <a href="https://ccbaohe.com/appleID/" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800 hover:underline">• ccbaohe.com/appleID</a>
+                                    <a href="https://dvsteam.vn/id-apple-shadowrocket" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800 hover:underline">• dvsteam.vn/id-apple-shadowrocket</a>
+                                    <a href="https://idapple.htpn.vn/" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800 hover:underline">• idapple.htpn.vn</a>
+                                    <a href="https://id.bocchi2b.top" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800 hover:underline">• id.bocchi2b.top</a>
+                                </div>
+                                <p class="text-xs text-gray-600 mt-2">💬 Nếu không được thì ib cho admin để cung cấp miễn phí</p>
+                            </div>
                             <div class="mt-2 w-full rounded-lg border border-dashed border-blue-300 bg-blue-50/40 flex items-center justify-center text-xs text-gray-500">
                                 <button type="button" class="block w-full" onclick="openImageModalAt(0)">
                                     <!-- Chèn ảnh hướng dẫn bước 1 (./assets/steps/step1.jpg) -->
@@ -304,6 +330,25 @@
                 <a href="shadowrocket://color?NavigationBarColor=%23151A25&NavigationBar2Color=%2310141D&NavigationBarTextColor=%23F0F0FF&NavigationBar2TextColor=%23F0F0FF&TabBarColor=%23151A25&TabBarBorderColor=%2300000000&TabBarSelectedColor=%2355E0FF&TabBarUnselectedColor=%238B8B99&TableBackgroundColor=%2310141D&TableCellBackgroundColor=%231A2230&TableCellSelectedBackgroundColor=%232A3447&TableSeparatorColor=%233A3A50&TextFieldTextColor=%23F0F0FF&PlaceholderColor=%239999AA&TextLabelTextColor=%2355E0FF&DetailLabelTextColor=%23E0E0FF&TextLabelDeleteColor=%23FF5555&HeaderFooterTextColor=%237A7A8A&SearchFieldBackgroundColor=%231A2230&IndicatorColor=%2355E0FF&ButtonIconColor=%2355E0FF&ButtonNormalColor=%23F0F0FF&ButtonNormal2Color=%23CCE6FF&ButtonNormal3Color=%237A7A8A&ButtonHighlightedColor=%2399E0FF&ButtonHighlighted2Color=%23FFFFFF&ButtonHighlighted3Color=%2355E0FF&ButtonDisabledColor=%23606070&PingSuccessTextColor=%2300E0A0&PingTimeoutTextColor=%23FF5555&DefaultDotColor=%23FFAA33&HUDBackgroundColor=%232A3447&v=1.0" class="w-full bg-gradient-to-r from-blue-500 to-sky-400 hover:from-blue-600 hover:to-sky-500 focus:ring-2 focus:ring-blue-300 focus:outline-none text-black font-semibold py-2 px-4 rounded-lg transition-all inline-flex items-center justify-center gap-2">
                     <i data-feather="droplet" class="w-5 h-5"></i>
                     <span>Áp dụng bộ màu</span>
+                </a>
+            </div>
+
+            <!-- Free Message -->
+            <div class="mt-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-4 border border-green-200 text-center">
+                <p class="text-sm text-gray-700">
+                    <span class="font-semibold text-green-600">Mọi thứ bên trên đều Free</span>, chúng mình chỉ muốn mọi người có thể <span class="font-semibold text-blue-600">vui vẻ chia sẻ</span> với nhau các khoảnh khắc.
+                </p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="mt-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-200 text-center">
+                <p class="text-sm text-gray-700 mb-2">
+                    <span class="font-semibold text-purple-600">Chúc các bạn may mắn.</span>
+                </p>
+                <p class="text-xs text-gray-600 mb-2">Mọi thông tin cần có thể liên hệ</p>
+                <a href="https://t.me/duyvinh09" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-2 px-4 rounded-lg transition-all">
+                    <i data-feather="message-circle" class="w-4 h-4"></i>
+                    <span>Admin: @duyvinh09</span>
                 </a>
             </div>
         </div>
