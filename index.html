@@ -89,14 +89,14 @@
 
                         <!-- Config link -->
                         <div>
-                            <label class="block text-sm text-gray-700 font-semibold mb-1">Link Config shadowrocket_basic (.conf)</label>
+                            <label class="block text-sm text-gray-700 font-semibold mb-1">Link Config All_In_One (.conf)</label>
                             <div class="flex items-center bg-gray-100 rounded-lg p-3">
-                                <span class="flex-1 overflow-x-auto text-sm">https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/shadowrocket_basic.conf</span>
-                                <button class="copy-btn ml-2 bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-300 focus:outline-none text-white px-3 py-1 rounded-lg transition-all" onclick="copyToClipboard('https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/shadowrocket_basic.conf')">
+                                <span class="flex-1 overflow-x-auto text-sm">https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/All_In_One.conf</span>
+                                <button class="copy-btn ml-2 bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-300 focus:outline-none text-white px-3 py-1 rounded-lg transition-all" onclick="copyToClipboard('https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/All_In_One.conf')">
                                     <i data-feather="copy" class="w-4 h-4"></i>
                                 </button>
                             </div>
-                            <a href="shadowrocket://config/add/https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/shadowrocket_basic.conf" class="mt-2 w-full bg-gradient-to-r from-blue-500 to-sky-400 hover:from-blue-600 hover:to-sky-500 focus:ring-2 focus:ring-blue-300 focus:outline-none text-black font-semibold py-2 px-4 rounded-lg transition-all inline-flex items-center justify-center gap-2">
+                            <a href="shadowrocket://config/add/https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/All_In_One.conf" class="mt-2 w-full bg-gradient-to-r from-blue-500 to-sky-400 hover:from-blue-600 hover:to-sky-500 focus:ring-2 focus:ring-blue-300 focus:outline-none text-black font-semibold py-2 px-4 rounded-lg transition-all inline-flex items-center justify-center gap-2">
                                 <i data-feather="file" class="w-5 h-5"></i>
                                 <span>Mở trong ShadowRocket</span>
                             </a>
@@ -131,7 +131,7 @@
                                 <i data-feather="download" class="w-5 h-5"></i>
                                 <span>Tải ShadowRocket trực tiếp</span>
                             </a>
-                            <div class="mt-2 text-xs text-gray-600">Ảnh minh hoạ tải trực tiếp:</div>
+                            <div class="mt-2 text-xs text-gray-600 italic">*Nếu iPhone của bạn từng cắm vô <span class="font-semibold text-blue-600">3utool</span> mới sài được</div>
                             <div class="mt-2 w-full rounded-lg border border-dashed border-blue-300 bg-blue-50/40 flex items-center justify-center text-xs text-gray-500">
                                 <button type="button" class="block w-full" onclick="openImageModalAt(0)">
                                     <img src="./assets/steps/downloadShadowRocket.jpg" alt="Tải ShadowRocket trực tiếp" class="w-full h-auto max-h-64 object-contain rounded-lg">
@@ -187,7 +187,7 @@
                             </div>
                         </li>
                         <li class="text-gray-700">
-                            Chọn cấu hình <span class="font-semibold text-blue-600">"shadowrocket_basic.conf"</span> → <span class="font-semibold">Sử dụng Config</span>.
+                            Chọn cấu hình <span class="font-semibold text-blue-600">"All_In_One.conf"</span> → <span class="font-semibold">Sử dụng Config</span>.
                             <div class="mt-2 w-full rounded-lg border border-dashed border-blue-300 bg-blue-50/40 flex items-center justify-center text-xs text-gray-500">
                                 <!-- Chèn ảnh hướng dẫn bước 3 (./assets/steps/step3.jpg) -->
                                 <button type="button" class="block w-full" onclick="openImageModalAt(3)">
@@ -196,7 +196,7 @@
                             </div>
                         </li>
                         <li class="text-gray-700">
-                            Nhấn vào biểu tượng chữ <i class="fas fa-info-circle text-blue-600"></i> màu xanh cạnh cấu hình <span class="font-semibold text-blue-600">"shadowrocket_basic.conf"</span> → vào mục <span class="font-semibold text-blue-600">Giải mã HTTPS</span> và bật <span class="font-semibold">Giải mã HTTPS</span> lên.
+                            Nhấn vào biểu tượng chữ <i class="fas fa-info-circle text-blue-600"></i> màu xanh cạnh cấu hình <span class="font-semibold text-blue-600">"All_In_One.conf"</span> → vào mục <span class="font-semibold text-blue-600">Giải mã HTTPS</span> và bật <span class="font-semibold">Giải mã HTTPS</span> lên.
                             <div class="mt-2 w-full rounded-lg border border-dashed border-blue-300 bg-blue-50/40 flex items-center justify-center text-xs text-gray-500">
                                 <!-- Chèn ảnh hướng dẫn bước 4 (./assets/steps/step4.jpg) -->
                                 <button type="button" class="block w-full" onclick="openImageModalAt(4)">
@@ -250,121 +250,209 @@
                 <h2 class="text-xl font-semibold mb-4 flex items-center text-gray-900">
                     <i data-feather="smartphone" class="mr-2"></i> Ứng dụng được hỗ trợ
                 </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 gap-4">
                     <!-- Alight Motion -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">AM</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">Alight Motion</div>
-                            <div class="text-xs text-gray-600">Mở khoá Pro, không watermark</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">AM</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Alight Motion</div>
+                                <div class="text-xs text-gray-600">Mở khoá Pro, không watermark</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-blue-50 p-2 rounded border-l-4 border-blue-300">
+                            💡 <strong>Cách kích hoạt:</strong> Mở app → Bấm vào biểu tượng Premium → Sẽ tự động kích hoạt Pro.
                         </div>
                     </div>
+                    
                     <!-- BeautyPlus -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">BP</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">BeautyPlus</div>
-                            <div class="text-xs text-gray-600">Mở khoá Vip</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">BP</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">BeautyPlus</div>
+                                <div class="text-xs text-gray-600">Mở khoá tính năng Vip</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-blue-50 p-2 rounded border-l-4 border-blue-300">
+                            💡 <strong>Cách kích hoạt:</strong> Mở app → Vào phần VIP → Tự động kích hoạt các tính năng Premium.
                         </div>
                     </div>
+                    
                     <!-- CamScanner -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">CS</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">CamScanner</div>
-                            <div class="text-xs text-gray-600">Mở khoá Vip</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">CS</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">CamScanner</div>
+                                <div class="text-xs text-gray-600">Mở khoá tính năng Vip</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-blue-50 p-2 rounded border-l-4 border-blue-300">
+                            💡 <strong>Cách kích hoạt:</strong> Khởi động lại app → Vào mục Premium sẽ thấy đã kích hoạt VIP.
                         </div>
                     </div>
+                    
                     <!-- KineMaster -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">KM</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">KineMaster</div>
-                            <div class="text-xs text-gray-600">Xoá watermark, lên pro</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">KM</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">KineMaster</div>
+                                <div class="text-xs text-gray-600">Xoá watermark, lên pro</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-blue-50 p-2 rounded border-l-4 border-blue-300">
+                            💡 <strong>Cách kích hoạt:</strong> Tạo project mới → Xuất video → Watermark sẽ tự động bị loại bỏ.
                         </div>
                     </div>
+                    
                     <!-- Lightroom -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">LR</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">Lightroom</div>
-                            <div class="text-xs text-gray-600">Mở khoá cao cấp</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">LR</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Lightroom</div>
+                                <div class="text-xs text-gray-600">Mở khoá cao cấp</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-amber-50 p-2 rounded border-l-4 border-amber-300">
+                            ⚠️ <strong>Yêu cầu đặc biệt:</strong> Cần có tài khoản Adobe đã từng đăng ký Premium trước đó. Đăng nhập vào tài khoản cũ → Tự động kích hoạt lại Premium.
                         </div>
                     </div>
+                    
                     <!-- Locket -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">LO</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">Locket</div>
-                            <div class="text-xs text-gray-600">Lên LocketGold</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">LO</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Locket</div>
+                                <div class="text-xs text-gray-600">Quay vd 5s, up ảnh,...</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-blue-50 p-2 rounded border-l-4 border-blue-300">
+                            💡 <strong>Cách kích hoạt:</strong> Mở app → Vào Settings → Thấy đã hiển thị LocketGold.
                         </div>
                     </div>
+                    
                     <!-- PicsArt -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">PA</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">PicsArt</div>
-                            <div class="text-xs text-gray-600">Premium đầy đủ tính năng</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">PA</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">PicsArt</div>
+                                <div class="text-xs text-gray-600">Premium đầy đủ tính năng</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-blue-50 p-2 rounded border-l-4 border-blue-300">
+                            💡 <strong>Cách kích hoạt:</strong> Mở app → Các tool Premium sẽ tự động mở khoá, không cần đăng ký.
                         </div>
                     </div>
+                    
                     <!-- Snow -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">SN</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">Snow</div>
-                            <div class="text-xs text-gray-600">Mở khoá Vip</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">SN</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Snow</div>
+                                <div class="text-xs text-gray-600">Mở khoá Vip</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-blue-50 p-2 rounded border-l-4 border-blue-300">
+                            💡 <strong>Cách kích hoạt:</strong> Mở app → Vào phần Premium → Sẽ thấy đã kích hoạt VIP.
                         </div>
                     </div>
+                    
                     <!-- SoundCloud Go+ -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">SC</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">SoundCloud</div>
-                            <div class="text-xs text-gray-600">Trải nghiệm Go+</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">SC</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">SoundCloud</div>
+                                <div class="text-xs text-gray-600">Trải nghiệm Go+</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-blue-50 p-2 rounded border-l-4 border-blue-300">
+                            💡 <strong>Cách kích hoạt:</strong> Khởi động lại app → Tự động kích hoạt SoundCloud Go+.
                         </div>
                     </div>
+                    
                     <!-- Spotify -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">SP</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">Spotify</div>
-                            <div class="text-xs text-gray-600">Loại bỏ quảng cáo, nghe nhạc chất lượng cao.</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">SP</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Spotify</div>
+                                <div class="text-xs text-gray-600">Loại bỏ quảng cáo, nghe nhạc chất lượng cao</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-amber-50 p-2 rounded border-l-4 border-amber-300">
+                            ⚠️ <strong>Cách kích hoạt:</strong> Đăng xuất tài khoản → Đăng nhập lại HOẶC xoá app → Tải lại từ App Store → Đăng nhập → Premium sẽ kích hoạt.
                         </div>
                     </div>
+                    
                     <!-- VSCO -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">VS</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">VSCO</div>
-                            <div class="text-xs text-gray-600">Filter full, studio nâng cao</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">VS</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">VSCO</div>
+                                <div class="text-xs text-gray-600">Filter full, studio nâng cao</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-blue-50 p-2 rounded border-l-4 border-blue-300">
+                            💡 <strong>Cách kích hoạt:</strong> Mở app → Vào Studio → All filters và tools sẽ tự động unlock.
                         </div>
                     </div>
+                    
                     <!-- Wink -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">WI</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">Wink</div>
-                            <div class="text-xs text-gray-600">Mở khoá Vip</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">WI</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Wink</div>
+                                <div class="text-xs text-gray-600">Mở khoá Vip (hiện quá tải)</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-blue-50 p-2 rounded border-l-4 border-blue-300">
+                            💡 <strong>Cách kích hoạt:</strong> Mở app → Các feature VIP sẽ tự động mở khoá.
                         </div>
                     </div>
+                    
                     <!-- Truecaller -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">TC</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">Truecaller</div>
-                            <div class="text-xs text-gray-600">Mở khoá Gold, chặn spam, caller ID</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">TC</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Truecaller</div>
+                                <div class="text-xs text-gray-600">Mở khoá Gold, chặn spam, caller ID</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-blue-50 p-2 rounded border-l-4 border-blue-300">
+                            💡 <strong>Cách kích hoạt:</strong> Mở app → Vào Settings → Premium → Sẽ thấy Truecaller Gold đã kích hoạt.
                         </div>
                     </div>
+                    
                     <!-- YouTube -->
-                    <div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">YT</div>
-                        <div>
-                            <div class="font-semibold text-gray-900">YouTube</div>
-                            <div class="text-xs text-gray-600">Chặn quảng cáo, tính năng phát nền</div>
+                    <div class="p-4 rounded-lg border border-gray-200 bg-white">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style="background-color: var(--all-in-app)">YT</div>
+                            <div>
+                                <div class="font-semibold text-gray-900">YouTube</div>
+                                <div class="text-xs text-gray-600">Chặn quảng cáo, tính năng phát nền</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 bg-blue-50 p-2 rounded border-l-4 border-blue-300">
+                            💡 <strong>Cách kích hoạt:</strong> Mở app → Quảng cáo sẽ tự động bị chặn, có thể phát video khi tắt màn hình.
                         </div>
                     </div>
                 </div>
-                <p class="text-xs text-gray-500 mt-3">Danh sách các app sẽ được cập nhật liên tục. Nếu sử dụng không được, có thể App đó đã bị Fix.</p>
+                <div class="mt-4 p-3 bg-red-50 rounded-lg border border-red-200">
+                    <p class="text-sm text-red-700 flex items-start gap-2">
+                        <span class="text-red-500 mt-0.5">⚠️</span>
+                        <span><strong>Lưu ý quan trọng:</strong> Danh sách các app sẽ được cập nhật liên tục. Nếu sử dụng không được, có thể App đó đã bị Fix. Một số app có thể cần thời gian để kích hoạt hoặc yêu cầu thao tác đặc biệt như đã ghi ở trên.</span>
+                    </p>
+                </div>
             </div>
             
             <!-- ShadowRocket Color Customization -->
