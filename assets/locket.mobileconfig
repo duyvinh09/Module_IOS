@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>DNSSettings</key>
+            <dict>
+                <key>DNSProtocol</key>
+                <string>TLS</string>
+                <key>ServerAddresses</key>
+                <array>
+                    <string>45.90.28.15</string>
+                    <string>45.90.30.15</string>
+                </array>
+                <key>ServerName</key>
+                <string>9d23ea.dns.nextdns.io</string>
+            </dict>
+
+            <!-- Payload con chỉ cần tên -->
+            <key>PayloadDisplayName</key>
+            <string>LocketGold</string>
+            <key>PayloadOrganization</key>
+            <string>NextDNS - duyvinh09</string>
+            <key>PayloadIdentifier</key>
+            <string>com.profile.dns.001</string>
+            <key>PayloadType</key>
+            <string>com.apple.dnsSettings.managed</string>
+            <key>PayloadUUID</key>
+            <string>8F9A2C1D-9B3P-4A9C-B2E8-6C4F1D2E9B7A</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+        </dict>
+    </array>
+
+    <!-- Tên profile chính hiển thị lớn nhất -->
+    <key>PayloadDisplayName</key>
+    <string>LocketGold</string>
+    <key>PayloadOrganization</key>
+    <string>Đinh Duy Vinh</string>
+
+    <!-- Mô tả chính sẽ hiển thị ở màn hình cài đặt (giống ảnh bạn gửi) -->
+    <key>PayloadDescription</key>
+    <string>🔐 Cấu hình bảo mật DNS:  
+– Chặn kết nối thu hồi (anti-revoke)  
+– Duy trì Gold ổn định 💫  
+– Tăng cường trải nghiệm ứng dụng 📱
+Support: t.me/duyvinh09</string>
+
+    <!-- Định danh profile chính -->
+    <key>PayloadIdentifier</key>
+    <string>com.profile.system.001</string>
+
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>9C3E8D5F-2A6B-4E5C-9F1A-6D2C8B0E7F4A</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>
