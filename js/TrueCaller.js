@@ -4,19 +4,34 @@ function findUrl(_reg) {
     }
 }
 const features = [
-    { id: "siri_search", rank: 1, status: "Included" },
-    { id: "no_ads", rank: 2, status: "Included" },
-    { id: "spam_blocking", rank: -2147483648, status: "Included" },
-    { id: "extended_spam_blocking", rank: 3, status: "Included" },
-    { id: "caller_id", rank: -2147483648, status: "Included" },
-    { id: "ct_call_recording", rank: 7, status: "Included" },
-    { id: "who_viewed_my_profile", rank: 9, status: "Included" },
-    { id: "incognito_mode", rank: 11, status: "Included" },
-    { id: "premium_badge", rank: 15, status: "Included" },
-    { id: "premium_support", rank: 16, status: "Included" },
-    { id: "live_chat_support", rank: 17, status: "Included" },
-    { id: "premium_app_icon", rank: 19, status: "Included" },
-    { id: "gold_caller_id", rank: 20, status: "Included" } 
+    { id: "live_lookup", rank: 1, status: "Included", "isFree": false },
+    { id: "auto_spam_block", rank: 2, status: "Included", "isFree": false },
+    { id: "series_blocking", rank: 3, status: "Included", "isFree": false },
+    { id: "no_ads", rank: 4, status: "Included", "isFree": false },
+    { id: "extended_spam_blocking", rank: 5, status: "Included", "isFree": false },
+    { id: "advanced_caller_id", rank: 6, status: "Included", "isFree": false },
+    { id: "verified_badge", rank: 7, status: "Included", "isFree": false },
+    { id: "spam_stats", rank: 8, status: "Included", "isFree": false },
+    { id: "call_alert", rank: 9, status: "Included", "isFree": false },
+    { id: "premium_feature", rank: 12, status: "Included", "isFree": false },
+    { id: "identifai", rank: 15, status: "Included", "isFree": false },
+    { id: "siri_search", rank: 16, status: "Included", "isFree": false },
+    { id: "who_viewed_my_profile", rank: 17, status: "Included", "isFree": false },
+    { id: "who_searched_for_me", rank: 18, status: "Included", "isFree": false },
+    { id: "contact_request", rank: 19, status: "Included", "isFree": false },
+    { id: "incognito_mode", rank: 20, status: "Included", "isFree": false },
+    { id: "premium_badge", rank: 21, status: "Included", "isFree": false },
+    { id: "premium_app_icon", rank: 22, status: "Included", "isFree": false },
+    { id: "ghost_call", rank: 23, status: "Included", "isFree": false },
+    { id: "live_chat_support", rank: 24, status: "Included", "isFree": false },
+    { id: "call_recording", rank: 25, status: "Excluded", "isFree": false },
+    { id: "premium_support", rank: 25, status: "Excluded", "isFree": false },
+    { id: "family_sharing", rank: 26, status: "Included", "isFree": false },
+    { id: "gold_caller_id", rank: 27, status: "Included", "isFree": false },
+    { id: "announce_call", rank: 28, status: "Excluded", "isFree": false },
+    { id: "caller_id", rank: 29, status: "Included", "isFree": false },
+    { id: "spam_blocking", rank: 30, status: "Included", "isFree": false },
+    { id: "whatsapp_caller_id", rank: 31, status: "Excluded", "isFree": false } 
 ];
 
 var obj;
@@ -28,28 +43,28 @@ switch ($request.url) {
             paymentProvider: "Apple",
             isExpired: false,
             isGracePeriodExpired: false,
-            subscriptionStatus: "INITIAL_BUY",
+            subscriptionStatus: "DID_RENEW",
             inAppPurchaseAllowed: true,
             product: {
-                id: "renewable.gold.annual",
-                sku: "renewable.gold.annual",
+                id: "apple_gold_family_yearly_v0_shop-0176",
+                sku: "apple_gold_family_yearly_v0",
                 contentType: "subscription",
-                productType: "GoldYearly",
-                isFreeTrial: true
+                productType: "SubsYearly",
+                isFreeTrial: false
             },
-            tier: { id: "gold", feature: features }
+            tier: { id: "goldfamily", feature: features }
         }
         break;
     case findUrl(/products\/apple/):
         obj = {
             "tier": [
                 {
-                "id": "gold",
+                "id": "goldfamily",
                 "product": [
                     {
-                    "productType": "GoldYearly",
-                    "id": "renewable.gold.annual",
-                    "sku": "renewable.gold.annual",
+                    "productType": "SubsYearly",
+                    "id": "apple_gold_family_yearly_v0_shop-0176",
+                    "sku": "apple_gold_family_yearly_v0",
                     "contentType": "subscription",
                     "rank": 6,
                     "paymentProvider": "Apple",
