@@ -43,7 +43,7 @@ switch ($request.url) {
             paymentProvider: "Apple",
             isExpired: false,
             isGracePeriodExpired: false,
-            subscriptionStatus: "DID_RENEW",
+            subscriptionStatus: "RenewalStatusOn",
             inAppPurchaseAllowed: true,
             product: {
                 id: "apple_gold_family_yearly_v0_shop-0176",
@@ -52,31 +52,31 @@ switch ($request.url) {
                 productType: "SubsYearly",
                 isFreeTrial: false
             },
-            tier: { id: "goldfamily", feature: features }
+            tier: { id: "goldfamily", feature: features },
+            scope: "paid_premium",
+            insuranceState: "ELIGIBLE"
         }
         break;
     case findUrl(/products\/apple/):
         obj = {
             "tier": [
                 {
-                "id": "goldfamily",
-                "product": [
-                    {
-                    "productType": "SubsYearly",
-                    "id": "apple_gold_family_yearly_v0_shop-0176",
-                    "sku": "apple_gold_family_yearly_v0",
-                    "contentType": "subscription",
-                    "rank": 6,
-                    "paymentProvider": "Apple",
-                    "clientProductMetadata": {
-                        "selectionRank": 5,
-                        "displayOrder": 5,
-                        "isEntitledPremiumScreenProduct": false
-                    }
-                    }
-                ],
-                "feature": features,
-                "rank": 5
+                    "id": "goldfamily",
+                    "product": [
+                        {
+                            "productType": "SubsYearly",
+                            "id": "apple_gold_family_yearly_v0_shop-0176",
+                            "sku": "apple_gold_family_yearly_v0",
+                            "contentType": "subscription",
+                            "paymentProvider": "Apple",
+                            "clientProductMetadata": {
+                                "selectionRank": 5,
+                                "displayOrder": 5,
+                                "isEntitledPremiumScreenProduct": false
+                            }
+                        }
+                    ],
+                    "feature": features
                 }
             ]
         }
