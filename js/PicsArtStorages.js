@@ -7,4 +7,4 @@ let objc = {
     },
     "status": "success"
 }
-$done({body: JSON.stringify(obj)});
+$done({ response: {body: JSON.stringify(objc),status: 200} });
