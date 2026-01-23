@@ -49,6 +49,16 @@ obj.features = [
         "name": "spotlight",
         "enabled": false,
         "plans": []
+    },
+    {
+        "name": "content_reporting",
+        "enabled": false,
+        "plans": []
+    },
+    {
+        "name": "content_reporting_dsa",
+        "enabled": false,
+        "plans": []
     }
 ];
 
