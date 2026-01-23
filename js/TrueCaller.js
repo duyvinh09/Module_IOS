@@ -52,9 +52,7 @@ switch ($request.url) {
                 productType: "SubsYearly",
                 isFreeTrial: false
             },
-            tier: { id: "goldfamily", feature: features },
-            scope: "paid_premium",
-            insuranceState: "ELIGIBLE"
+            tier: { id: "goldfamily", feature: features }
         }
         break;
     case findUrl(/products\/apple/):
@@ -68,6 +66,7 @@ switch ($request.url) {
                             "id": "apple_gold_family_yearly_v0_shop-0176",
                             "sku": "apple_gold_family_yearly_v0",
                             "contentType": "subscription",
+                            "rank": 6,
                             "paymentProvider": "Apple",
                             "clientProductMetadata": {
                                 "selectionRank": 5,
@@ -76,7 +75,8 @@ switch ($request.url) {
                             }
                         }
                     ],
-                    "feature": features
+                    "feature": features,
+                    "rank": 5
                 }
             ]
         }
