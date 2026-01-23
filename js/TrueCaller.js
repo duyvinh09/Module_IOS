@@ -29,8 +29,8 @@ const features = [
     { id: "family_sharing", rank: 26, status: "Included", "isFree": false },
     { id: "gold_caller_id", rank: 27, status: "Included", "isFree": false },
     { id: "announce_call", rank: 28, status: "Excluded", "isFree": false },
-    { id: "caller_id", rank: 29, status: "Included", "isFree": false },
-    { id: "spam_blocking", rank: 30, status: "Included", "isFree": false },
+    { id: "caller_id", rank: 29, status: "Included", "isFree": true },
+    { id: "spam_blocking", rank: 30, status: "Included", "isFree": true },
     { id: "whatsapp_caller_id", rank: 31, status: "Excluded", "isFree": false } 
 ];
 
@@ -43,7 +43,7 @@ switch ($request.url) {
             paymentProvider: "Apple",
             isExpired: false,
             isGracePeriodExpired: false,
-            subscriptionStatus: "RenewalStatusOn",
+            subscriptionStatus: "SUBSCRIBED",
             inAppPurchaseAllowed: true,
             product: {
                 id: "apple_gold_family_yearly_v0_shop-0176",
@@ -72,7 +72,7 @@ switch ($request.url) {
                             "clientProductMetadata": {
                                 "selectionRank": 5,
                                 "displayOrder": 5,
-                                "isEntitledPremiumScreenProduct": false
+                                "isEntitledPremiumScreenProduct": true
                             }
                         }
                     ],
