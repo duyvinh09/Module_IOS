@@ -4,7 +4,7 @@ var objc = JSON.parse($response.body);
 
     objc = {
   
-"vip_expires_date": 3000330150,
+"vip_expires_date": 4071600000,
 "message": "success",
   "data": {
     "points": 999999999,

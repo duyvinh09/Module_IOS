@@ -24,9 +24,9 @@ if ($request.url.indexOf(vip1) != -1){
     duyvinh09["data"] = {
         "originalTransactionId" : "490001464780901",
         "errorCode" : 0,
-        "purchaseTime" : 1662685749,
+        "purchaseTime" : 1105228800,
         "isTrialPeriod" : 1,
-        "expireTime" : 4092599349,
+        "expireTime" : 4071600000,
         "sandbox" : 0
     };
 }
@@ -34,13 +34,13 @@ if ($request.url.indexOf(vip1) != -1){
 if ($request.url.indexOf(vip2) != -1){
     duyvinh09["data"] = {
         "sandbox" : 0,
-        "purchaseTime" : 1662685749,
+        "purchaseTime" : 1105228800,
         "isTrialPeriod" : 1,
         "originalTransactionId" : "490001464780901",
-        "appleExpireTime" : 4092599349,
+        "appleExpireTime" : 4071600000,
         "productId" : "vip_yearly_3daysfree",
         "appleVip" : 1,
-        "expireTime" : 4092599349,
+        "expireTime" : 4071600000,
         "giftVip" : 1,
         "operationVip" : 1,
         "errorCode" : 0

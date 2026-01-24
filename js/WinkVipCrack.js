@@ -39,7 +39,7 @@ obj.data = {
     sub_type: 2,
     account_id: "1230010086",
     invalid_time: "32662195199000",
-    valid_time: "1569664800000",
+    valid_time: "1546992000000",
     active_product_id: "0",
     active_promotion_status: 2,
     show_renew_flag: true
