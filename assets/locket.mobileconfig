@@ -8,56 +8,69 @@
             <key>DNSSettings</key>
             <dict>
                 <key>DNSProtocol</key>
-                <string>TLS</string>
+                <string>HTTPS</string>
                 <key>ServerAddresses</key>
                 <array>
-                    <string>45.90.28.15</string>
-                    <string>45.90.30.15</string>
+                    <string>1.1.1.1</string>
+                    <string>1.0.0.1</string>
                 </array>
-                <key>ServerName</key>
-                <string>9d23ea.dns.nextdns.io</string>
+                <key>ServerURL</key>
+                <string>https://api.p12.vn/dns-query</string>
+                
+                <key>SupplementalMatchDomains</key>
+                <array>
+                    <string>api.revenuecat.com</string>
+                    <string>app.revenuecat.com</string>
+                    <string>in.appcenter.ms</string>
+                    <string>app-measurement.com</string>
+                    <string>firebaselogging-pa.googleapis.com</string>
+                    <string>mixpanel.com</string>
+                    <string>api.mixpanel.com</string>
+                </array>
             </dict>
-
-            <!-- Payload con chỉ cần tên -->
+            <key>OnDemandRules</key>
+            <array>
+                <dict>
+                    <key>Action</key>
+                    <string>Connect</string>
+                    <key>InterfaceTypeMatch</key>
+                    <string>WiFi</string>
+                </dict>
+                <dict>
+                    <key>Action</key>
+                    <string>Connect</string>
+                    <key>InterfaceTypeMatch</key>
+                    <string>Cellular</string>
+                </dict>
+            </array>
+            <key>PayloadDescription</key>
+            <string>Configures device to use Locket VIP Free DNS</string>
             <key>PayloadDisplayName</key>
-            <string>LocketGold</string>
-            <key>PayloadOrganization</key>
-            <string>NextDNS - duyvinh09</string>
+            <string>Locket VIP Server</string>
             <key>PayloadIdentifier</key>
-            <string>com.profile.dns.001</string>
+            <string>com.apple.dnsSettings.managed.locketvip</string>
             <key>PayloadType</key>
             <string>com.apple.dnsSettings.managed</string>
             <key>PayloadUUID</key>
-            <string>8F9A2C1D-9B3P-4A9C-B2E8-6C4F1D2E9B7A</string>
+            <string>A1B2C3D4-E5F6-7890-1234-56789ABCDEF0</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
         </dict>
     </array>
-
-    <!-- Tên profile chính hiển thị lớn nhất -->
+    <key>PayloadDescription</key>
+    <string>Hồ sơ cầu hình VIP chặn thu hồi Locket Gold vĩnh viễn.</string>
     <key>PayloadDisplayName</key>
-    <string>LocketGold</string>
+    <string>💛 Locket Gold</string>
+    <key>PayloadIdentifier</key>
+    <string>com.duyvinh09.locket.vip</string>
     <key>PayloadOrganization</key>
     <string>Đinh Duy Vinh</string>
-
-    <!-- Mô tả chính sẽ hiển thị ở màn hình cài đặt (giống ảnh bạn gửi) -->
-    <key>PayloadDescription</key>
-    <string>🔐 Cấu hình bảo mật DNS:  
-– Chặn kết nối thu hồi (anti-revoke)  
-– Duy trì Gold ổn định 💫  
-– Tăng cường trải nghiệm ứng dụng 📱
-Support: t.me/duyvinh09</string>
-
-    <!-- Định danh profile chính -->
-    <key>PayloadIdentifier</key>
-    <string>com.profile.system.001</string>
-
     <key>PayloadRemovalDisallowed</key>
     <false/>
     <key>PayloadType</key>
     <string>Configuration</string>
     <key>PayloadUUID</key>
-    <string>9C3E8D5F-2A6B-4E5C-9F1A-6D2C8B0E7F4A</string>
+    <string>12345678-90AB-CDEF-1234-567890ABCDEF</string>
     <key>PayloadVersion</key>
     <integer>1</integer>
 </dict>
