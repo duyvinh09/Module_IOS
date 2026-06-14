@@ -15,14 +15,13 @@ objc = {
                     "AdvancedEasing",
                     "CameraObjects",
                     "LayerParenting",
-                    "CloudStorageLowTier",
-                    "CloudStorageHighTier"
+                    "CloudStorageLowTier"
                 ],
-                "type": "sub",
+                "type": "subscription",
                 "store": "apple_app_store",
                 "autoRenewing": true,
-                "orderNumber": "300001752007005",
-                "productId": "alightcreative.motion.1y_t80_cloud_extra",
+                "orderNumber": "730002548422566",
+                "productId": "alightcreative.motion.1y_t60_1w_choose_your_bundle",
                 "period": "1y",
                 "label": null,
                 "details": null,
