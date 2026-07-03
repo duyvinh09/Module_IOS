@@ -113,7 +113,7 @@ RevenueCatVip = type=http-response, pattern=^https:\/\/api\.(revenuecat|rc-backu
 
 #iTunes
 #hostname = buy.itunes.apple.com
-iTunes = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true, max-size=-1, timeout=60
+iTunes = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/iTunes.js, requires-body=true, max-size=-1, timeout=60
 #************************************#
 
 #Snow
