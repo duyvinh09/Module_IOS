@@ -1,0 +1,10 @@
+#!url=https://github.com/duyvinh09/Module_IOS/blob/main/modules/Duolingo.sgmodule
+#!name=Duolingo
+#!desc=Crack By duyvinh09
+#!====================================
+
+[MITM]
+hostname = %APPEND% ios-api-cf.duolingo.com
+
+[Script]
+Duolingo = type=http-response, pattern=^https?:\/\/ios-api-cf\.duolingo\.com\/plus-promotions\/ml-predictions\/centralized-decision, script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/Duolingo.js, requires-body=true, max-size=-1, timeout=60
