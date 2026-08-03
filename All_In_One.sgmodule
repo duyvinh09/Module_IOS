@@ -128,7 +128,7 @@ Meitu = type=http-response,pattern=^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d
 
 #Duolingo
 #hostname = ios-api-cf.duolingo.com
-Duolingo = type=http-response, pattern=^https?:\/\/ios-api-cf\.duolingo\.com\/plus-promotions\/ml-predictions\/centralized-decision, script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/Duolingo.js, requires-body=true, max-size=-1, timeout=60
+Duolingo = type=http-request, pattern=^https?:\/\/ios-api-cf\.duolingo\.com\/plus-promotions\/ml-predictions\/centralized-decision, script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/Duolingo.js, requires-body=true, max-size=-1, timeout=60
 #************************************#
 
 [Map Local]

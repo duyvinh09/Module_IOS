@@ -1,34 +1,32 @@
-var objc = JSON.parse($response.body);
-
-objc = {
+let objc = {
     "decisions": {
         "general": {
-            "result": "falstaff_streaming",
+            "result": "family_plan_zari_doorbell",
             "contextTrackingProperties": {
-                "decision_id": "61697777-5228-4e88-ae79-37792c8cc2c4"
+                "decision_id": "1659e42f-d00a-40eb-ab42-b7d3e335e948"
             }
         },
         "enriched": {
-            "stringID": "falstaff_streaming",
+            "stringID": "family_plan_zari_doorbell",
             "variantClass": "StaticDuolingoVideoVariant",
             "contextTrackingProperties": {
-                "decision_id": "61697777-5228-4e88-ae79-37792c8cc2c4"
+                "decision_id": "1659e42f-d00a-40eb-ab42-b7d3e335e948"
             },
-            "adStartBackgroundColor": "E6DBA5",
-            "videoURL": "https://simg-ssl.duolingo.com/videos/promo/DuolingoInterstitial_FalstaffStreaming_English_Energy.mp4",
-            "madJsonURL": "https://simg-ssl.duolingo.com/videos/promo/DuolingoInterstitial_FalstaffStreaming_Energy_English.json",
+            "adStartBackgroundColor": "1F1F1F",
+            "videoURL": "https://simg-ssl.duolingo.com/videos/promo/DuolingoInterstitial_FamilyPlanZariDoorbell_English_Energy.mp4",
+            "madJsonURL": "https://simg-ssl.duolingo.com/videos/promo/DuolingoInterstitial_FamilyPlanZariDoorbell_Energy_English.json",
             "isModular": true,
             "iconStyle": "LIGHT",
-            "offerOrigin": "INTERSTITIAL_PLUS_VIDEO",
+            "offerOrigin": "INTERSTITIAL_PLUS_VIDEO_FAMILY_PLAN",
             "shouldHideCloseButton": false,
             "standardButtonsState": "GENERAL_STATE",
-            "madWrapper": "falstaff_nature",
+            "madWrapper": "lily_zari_doorbell",
             "madWorldCharacters": [
-                "falstaff"
+                "zari"
             ],
             "numWorldCharacters": 1,
             "madValuePropositions": [
-                "intervention",
+                "learn_faster",
                 "no_ads",
                 "unlimited_energy"
             ]
@@ -36,6 +34,4 @@ objc = {
     },
     "trackingProperties": null
 }
-
-
-$done({ body: JSON.stringify(objc) });
+$done({ response: {body: JSON.stringify(objc),status: 200} });
