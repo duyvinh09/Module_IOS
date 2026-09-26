@@ -33,7 +33,7 @@
           <string>HTTPS</string>
 
           <key>ServerURL</key>
-          <string>https://my.ublockdns.com/n14wsy1d</string>
+          <string>https://my.ublockdns.com/z451ak95</string>
         </dict>
 
         <key>OnDemandRules</key>
@@ -81,7 +81,7 @@
         <string>A1E2F262-DB73-40F6-BD22-2E42A43A3C94.d8f9fe.dnsSettings.managed</string>
 
         <key>PayloadDisplayName</key>
-        <string>Locket Gold NextDNS</string>
+        <string>Locket Gold DNS</string>
 
         <key>PayloadOrganization</key>
         <string></string>
