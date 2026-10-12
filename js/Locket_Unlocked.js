@@ -1328,7 +1328,7 @@ if (ua.includes("Locket")) {
     obj.entries.widget_sync_token_reload_mode = "clearTokenNever";
     obj.entries.widget_frame_event = JSON.stringify({
         uid: "duyvinh09",
-        url: "https://cdn.upanhlaylink.com/i/A1dIOHId.png",
+        url: "https://storage.googleapis.com/locket-public/widget_frames/hcmc_day_2026/hcmc_day_systemLarge@3x.png",
         use_local_time_zone: true,
         placement: "below",
         start_at: "2005-09-15T00:00:00",
