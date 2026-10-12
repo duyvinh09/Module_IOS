@@ -1223,7 +1223,7 @@ if (ua.includes("Locket")) {
     obj.entries.activity_bar_enabled = "true";
     obj.entries.journal_activity_bar_enabled = "true";
     obj.entries.paywall_presentation_config = JSON.stringify({
-        uid: "paywall_testflight",
+        uid: "v1_popup",
         onboarding: false,
         after_sent_moment: false,
         on_foreground: false,
@@ -1235,7 +1235,7 @@ if (ua.includes("Locket")) {
     obj.entries.paywall_config = JSON.stringify({
         uid: "v2_testflight",
         title: { en: "Locket Gold", vi: "Locket Gold" },
-        profile_banner_title: { en: "Locket Gold", vi: "Locket Gold @duyvinh09", },
+        profile_banner_title: { en: "Locket Gold", vi: "Locket Gold", },
         completed_title: {
             en: "Welcome to Gold!\nCracked by duyvinh09",
             vi: "Chào mừng bạn đến với Locket Gold!\nCrack bởi duyvinh09",
@@ -1338,9 +1338,12 @@ if (ua.includes("Locket")) {
     obj.entries.widget_last_sent_indicator = "false";
     obj.entries.widget_sync_token_reload_mode = "clearTokenNever";
     obj.entries.widget_frame_event = JSON.stringify({
-        uid: "RuYKzIiU",
+        uid: "duyvinh09",
         url: "https://cdn.upanhlaylink.com/i/RuYKzIiU.png",
-        placement: "overlay",
+        use_local_time_zone: true,
+        placement: "below",
+        start_at: "2026-10-12T00:00:00",
+        end_at: "2026-12-31T23:59:59"
     });
     obj.entries.cdn_domain_replacements = JSON.stringify({
         "firebasestorage.googleapis.com": "cdn.locketcamera.com",
