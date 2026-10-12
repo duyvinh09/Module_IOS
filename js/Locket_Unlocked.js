@@ -68,7 +68,6 @@ if (ua.includes("Locket")) {
                 { overlay_id: "caption:streak", source: "local", caption: { type: "streak" }, },
                 { overlay_id: "caption:star_sign", source: "local", caption: { type: "star_sign" }, },
                 { overlay_id: "caption:poll", source: "local", caption: { type: "poll" } },
-                { overlay_id: "caption:color", source: "local", caption: { type: "color" } },
                 { overlay_id: "caption:locket_count", source: "local", caption: { type: "locket_count" }, },
             ],
         },
@@ -97,7 +96,7 @@ if (ua.includes("Locket")) {
                         max_lines: 1,
                         text: "Xin chào Mùa Thu",
                         localized_text: { en: "Hello Autumn", vn: "Xin chào Mùa Thu" },
-                        text_color: "#FFB182",
+                        text_color: "#FFFFFF",
                         type: "static_content"
                     }
                 },
@@ -160,19 +159,7 @@ if (ua.includes("Locket")) {
                         background: { colors: ["#FF0062", "#FF783F"] },
                         max_lines: 1,
                         text: "2027",
-                        localized_text: { en: "2027", vn: "2027" },
                         text_color: "#FFFFFF",
-                        type: "static_content"
-                    }
-                },
-                {
-                    overlay_id: "caption:forgotten_island",
-                    source: "remote",
-                    caption: {
-                        background: { "image": "https://public.locketcamera.com/locket-public/overlays/forgotten_island/forgotten_island_bg.png" },
-                        max_lines: 1,
-                        text: "NO MEMORY LEFT BEHIND",
-                        text_color: "#FFFFFFE6",
                         type: "static_content"
                     }
                 },
@@ -262,6 +249,17 @@ if (ua.includes("Locket")) {
             section: "🎨 Decorative by Duy Vinh",
             items: [
                 {
+                    overlay_id: "caption:duyvinh09",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#B8E7FF", "#A8F5D0", "#DCCBFF"], },
+                        max_lines: 1,
+                        text: "💻 duyvinh09",
+                        text_color: "#183153",
+                        type: "static_content",
+                    },
+                },
+                {
                     overlay_id: "caption:feeling_cute",
                     source: "remote",
                     caption: {
@@ -347,7 +345,6 @@ if (ua.includes("Locket")) {
                         icon: { data: "📷", type: "emoji" },
                         max_lines: 1,
                         text: "Locket Time!",
-                        localized_text: { en: "Locket Time!", vn: "Giờ Locket!" },
                         text_color: "#000000E6",
                         type: "static_content",
                     },
@@ -360,7 +357,6 @@ if (ua.includes("Locket")) {
                         icon: { data: "🎬", type: "emoji" },
                         max_lines: 1,
                         text: "Cinema Time!",
-                        localized_text: { en: "Cinema Time!", vn: "Giờ xem phim!" },
                         text_color: "#FFFFFFE6",
                         type: "static_content",
                     },
@@ -373,7 +369,6 @@ if (ua.includes("Locket")) {
                         icon: { data: "💕", type: "emoji" },
                         max_lines: 1,
                         text: "Dating Time!",
-                        localized_text: { en: "Dating Time!", vn: "Giờ hẹn hò!" },
                         text_color: "#FFFFFFE6",
                         type: "static_content",
                     },
@@ -1229,7 +1224,7 @@ if (ua.includes("Locket")) {
     obj.entries.paywall_config = JSON.stringify({
         uid: "v2_testflight",
         title: { en: "Locket Gold", vi: "Locket Gold" },
-        profile_banner_title: { en: "Locket Gold @duyvinh09", vi: "Locket Gold @duyvinh09", },
+        profile_banner_title: { en: "Locket Gold", vi: "Locket Gold", },
         completed_title: {
             en: "Welcome to Gold!\nCracked by duyvinh09",
             vi: "Chào mừng bạn đến với Locket Gold!\nCrack bởi duyvinh09",
@@ -1333,7 +1328,7 @@ if (ua.includes("Locket")) {
     obj.entries.widget_sync_token_reload_mode = "clearTokenNever";
     obj.entries.widget_frame_event = JSON.stringify({
         uid: "duyvinh09",
-        url: "https://public.locketcamera.com/locket-public/widget_frames/midautumn_2026/midautumn_2026.png",
+        url: "https://firebasestorage.googleapis.com/v0/b/locket-img/o/users%2FT5fVKFP994fywhgwFKWsIKSCLeg1%2Fmoments%2Fthumbnails%2F4szIT326N2DMZbd1FbJK.webp?alt=media&token=80e84999-4115-4aca-802c-c2ad4d48040e",
         use_local_time_zone: true,
         placement: "below",
         start_at: "2005-09-15T00:00:00",
