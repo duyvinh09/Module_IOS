@@ -1328,7 +1328,7 @@ if (ua.includes("Locket")) {
     obj.entries.widget_sync_token_reload_mode = "clearTokenNever";
     obj.entries.widget_frame_event = JSON.stringify({
         uid: "duyvinh09",
-        url: "https://firebasestorage.googleapis.com/v0/b/locket-img/o/users%2FT5fVKFP994fywhgwFKWsIKSCLeg1%2Fmoments%2Fthumbnails%2F4szIT326N2DMZbd1FbJK.webp?alt=media&token=80e84999-4115-4aca-802c-c2ad4d48040e",
+        url: "https://files.catbox.moe/mvfvhi.png",
         use_local_time_zone: true,
         placement: "below",
         start_at: "2005-09-15T00:00:00",
