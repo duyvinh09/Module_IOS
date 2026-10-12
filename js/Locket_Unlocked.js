@@ -8,13 +8,8 @@
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
 var obj = JSON.parse($response.body);
 
-// Chỉ can thiệp khi request đến từ app Locket
 if (ua.includes("Locket")) {
     obj.Attention = "Chúc mừng bạn! Vui lòng không bán hoặc chia sẻ cho người khác!";
-
-    // ============================================================
-    // NHÓM 1: FEATURE GATES — mở khóa toàn bộ tính năng
-    // ============================================================
     obj.entries.feature_gates = JSON.stringify({
         app_icon_picker: "enabled",
         camera_roll: "enabled",
@@ -30,10 +25,6 @@ if (ua.includes("Locket")) {
         custom_widget_frames: "enabled",
         streak_recovery: "enabled",
     });
-
-    // ============================================================
-    // NHÓM 2: QUẢNG CÁO — tắt hoàn toàn
-    // ============================================================
     obj.entries.history_ads_mode = "off";
     obj.entries.history_ads_prefetch_count = "0";
     obj.entries.history_ads_prefetch_immediate = "false";
@@ -44,20 +35,12 @@ if (ua.includes("Locket")) {
     obj.entries.history_ads_floor_price_att = "0";
     obj.entries.history_ad_log_displayed_on_background = "false";
     obj.entries.history_ads_debug_menu = "false";
-
-    // ============================================================
-    // NHÓM 3: MOMENT VIEWS — xem ai đã xem
-    // ============================================================
     obj.entries.moment_views_enabled = "true";
     obj.entries.moment_views_v2 = "true";
     obj.entries.record_moment_views = "true";
     obj.entries.notify_moment_views = "true";
     obj.entries.get_moment_views_as_cloud_function = "true";
     obj.entries.moment_reactions_v2 = "true";
-
-    // ============================================================
-    // NHÓM 4: BẠN BÈ — bỏ giới hạn
-    // ============================================================
     obj.entries.max_friends_count = "9999";
     obj.entries.friend_limit_mode = "0";
     obj.entries.soft_friend_limit_threshold_count = "9999";
@@ -65,10 +48,6 @@ if (ua.includes("Locket")) {
     obj.entries.signup_max_friends_count = "9999";
     obj.entries.celebrity_inbox_limit = "9999";
     obj.entries.friend_limit_geo_override = JSON.stringify({experiments: {}, area_code_overrides: {},});
-
-    // ============================================================
-    // NHÓM 5: OVERLAY / CAPTION — mở rộng
-    // ============================================================
     obj.entries.overlay_dynamic_captions = JSON.stringify(["standard", "location", "weather", "time",]);
     obj.entries.overlay_navigator_enabled = "true";
     obj.entries.overlays_v2_config = JSON.stringify({suggestions_enabled: true,});
@@ -78,7 +57,7 @@ if (ua.includes("Locket")) {
     obj.entries.link_caption_link_enabled = "true";
     obj.entries.overlay_items = JSON.stringify([
         {
-            section: "🌸 General",
+            section: "🎨 General",
             items: [
                 { overlay_id: "caption:standard", source: "local", caption: { type: "standard" }, },
                 { overlay_id: "caption:review", source: "local", caption: { type: "review" }, },
@@ -90,10 +69,11 @@ if (ua.includes("Locket")) {
                 { overlay_id: "caption:star_sign", source: "local", caption: { type: "star_sign" }, },
                 { overlay_id: "caption:poll", source: "local", caption: { type: "poll" } },
                 { overlay_id: "caption:color", source: "local", caption: { type: "color" } },
+                { overlay_id: "caption:locket_count", source: "local", caption: { type: "locket_count" }, },
             ],
         },
         {
-            section: "🌸 Special Events",
+            section: "🎨 Holiday Caption",
             items: [
                 {
                     overlay_id: "caption:halloween_2026",
@@ -104,6 +84,19 @@ if (ua.includes("Locket")) {
                         max_lines: 1,
                         text: "Halloween",
                         localized_text: { en: "Halloween", vn: "Halloween" },
+                        text_color: "#FFB182",
+                        type: "static_content"
+                    }
+                },
+                {
+                    overlay_id: "caption:autumn_2026",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#FFE0A0", "#F6A53A"] },
+                        icon: { data: "🍂", type: "emoji" },
+                        max_lines: 1,
+                        text: "Xin chào Mùa Thu",
+                        localized_text: { en: "Hello Autumn", vn: "Xin chào Mùa Thu" },
                         text_color: "#FFB182",
                         type: "static_content"
                     }
@@ -172,11 +165,33 @@ if (ua.includes("Locket")) {
                         type: "static_content"
                     }
                 },
+                {
+                    overlay_id: "caption:forgotten_island",
+                    source: "remote",
+                    caption: {
+                        background: { "image": "https://public.locketcamera.com/locket-public/overlays/forgotten_island/forgotten_island_bg.png" },
+                        max_lines: 1,
+                        text: "NO MEMORY LEFT BEHIND",
+                        text_color: "#FFFFFFE6",
+                        type: "static_content"
+                    }
+                },
             ],
         },
         {
-            section: "🌸 Decorative by Locket",
+            section: "🎨 Decorative by Locket",
             items: [
+                {
+                    overlay_id: "caption:toi_nho_em",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#FFFFFF", "#6D9EEB"] },
+                        max_lines: 1,
+                        text: "보고 싶어 🥺",
+                        text_color: "#000000E6",
+                        type: "static_content",
+                    },
+                },
                 {
                     overlay_id: "caption:party_time",
                     source: "remote",
@@ -189,7 +204,6 @@ if (ua.includes("Locket")) {
                         type: "static_content",
                     },
                 },
-                { overlay_id: "caption:locket_count", source: "local", caption: { type: "locket_count" }, },
                 {
                     overlay_id: "caption:good_morning",
                     source: "remote",
@@ -239,6 +253,180 @@ if (ua.includes("Locket")) {
                         max_lines: 1,
                         text: "Miss you",
                         text_color: "#FFFFFFDB",
+                        type: "static_content",
+                    },
+                },
+            ],
+        },
+        {
+            section: "🎨 Decorative by Duy Vinh",
+            items: [
+                {
+                    overlay_id: "caption:feeling_cute",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#F8BBD0", "#E91E63"] },
+                        icon: { data: "🌷", type: "emoji" },
+                        max_lines: 1,
+                        text: "Feeling Cute",
+                        localized_text: { en: "Feeling Cute", vn: "Cảm thấy dthw" },
+                        text_color: "#FFFFFFE5",
+                        type: "static_content",
+                    },
+                },
+                {
+                    overlay_id: "caption:wedding_time",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#FFE4E1", "#E73C7E"] },
+                        icon: { data: "💍", type: "emoji" },
+                        max_lines: 1,
+                        text: "Wedding Time!",
+                        localized_text: { en: "Wedding Time!", vn: "Đám cưới nè!" },
+                        text_color: "#FFFFFFE6",
+                        type: "static_content",
+                    },
+                },
+                {
+                    overlay_id: "caption:cam_thay_hanh_phuc",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#EC407A", "#F8BBD0"] },
+                        icon: { data: "🇻🇳", type: "emoji" },
+                        max_lines: 1,
+                        text: "Cảm thấy hạnh phúc",
+                        localized_text: { en: "Feeling Happy", vn: "Cảm thấy hạnh phúc" },
+                        text_color: "#FFFFFFE6",
+                        type: "static_content",
+                    },
+                },
+                {
+                    overlay_id: "caption:coffee_time",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#4E342E", "#8D6E63"] },
+                        icon: { data: "☕", type: "emoji" },
+                        max_lines: 1,
+                        text: "Coffee Time!",
+                        localized_text: { en: "Coffee Time!", vn: "Giờ uống cà phê!" },
+                        text_color: "#FFFFFFE6",
+                        type: "static_content",
+                    },
+                },
+                {
+                    overlay_id: "caption:snake_vibes",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#2E7D32", "#66BB6A"] },
+                        icon: { data: "🐍", type: "emoji" },
+                        max_lines: 1,
+                        text: "Snake Vibes",
+                        localized_text: { en: "Snake Vibes", vn: "Chất rắn" },
+                        text_color: "#FFFFFFE6",
+                        type: "static_content",
+                    },
+                },
+                {
+                    overlay_id: "caption:mixue_time",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#FFF9C4", "#F8BBD0"] },
+                        icon: { data: "🍦", type: "emoji" },
+                        max_lines: 1,
+                        text: "Mixue Time!",
+                        localized_text: { en: "Mixue Time!", vn: "Giờ Mixue!" },
+                        text_color: "#000000E6",
+                        type: "static_content",
+                    },
+                },
+                {
+                    overlay_id: "caption:locket_time",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#ECEFF1", "#B3E5FC"] },
+                        icon: { data: "📷", type: "emoji" },
+                        max_lines: 1,
+                        text: "Locket Time!",
+                        localized_text: { en: "Locket Time!", vn: "Giờ Locket!" },
+                        text_color: "#000000E6",
+                        type: "static_content",
+                    },
+                },
+                {
+                    overlay_id: "caption:cinema_time",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#1A237E", "#455A64"] },
+                        icon: { data: "🎬", type: "emoji" },
+                        max_lines: 1,
+                        text: "Cinema Time!",
+                        localized_text: { en: "Cinema Time!", vn: "Giờ xem phim!" },
+                        text_color: "#FFFFFFE6",
+                        type: "static_content",
+                    },
+                },
+                {
+                    overlay_id: "caption:dating_time",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#E91E63", "#F44336"] },
+                        icon: { data: "💕", type: "emoji" },
+                        max_lines: 1,
+                        text: "Dating Time!",
+                        localized_text: { en: "Dating Time!", vn: "Giờ hẹn hò!" },
+                        text_color: "#FFFFFFE6",
+                        type: "static_content",
+                    },
+                },
+                {
+                    overlay_id: "caption:graduation_day",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#1A237E", "#283593"] },
+                        icon: { data: "🎓", type: "emoji" },
+                        max_lines: 1,
+                        text: "Happy Graduation Day!",
+                        localized_text: { en: "Happy Graduation Day!", vn: "Chúc mừng tốt nghiệp!" },
+                        text_color: "#FFFFFFE6",
+                        type: "static_content",
+                    },
+                },
+                {
+                    overlay_id: "caption:shopping_time",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#B3E5FC", "#FFFFFF"] },
+                        icon: { data: "🛍️", type: "emoji" },
+                        max_lines: 1,
+                        text: "Shopping Time!",
+                        localized_text: { en: "Shopping Time!", vn: "Giờ mua sắm!" },
+                        text_color: "#000000E6",
+                        type: "static_content",
+                    },
+                },
+                {
+                    overlay_id: "caption:dinner_time",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#FFCCBC", "#FF8A80"] },
+                        icon: { data: "🍽️", type: "emoji" },
+                        max_lines: 1,
+                        text: "Dinner Time!",
+                        localized_text: { en: "Dinner Time!", vn: "Giờ ăn tối!" },
+                        text_color: "#FFFFFFE6",
+                        type: "static_content",
+                    },
+                },
+                {
+                    overlay_id: "caption:chilling_time",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#E1BEE7", "#F8BBD0"] },
+                        icon: { data: "🌴", type: "emoji" },
+                        max_lines: 1,
+                        text: "Chilling Time!",
+                        localized_text: { en: "Chilling Time!", vn: "Giờ thư giãn!" },
+                        text_color: "#FFFFFFE6",
                         type: "static_content",
                     },
                 },
@@ -480,6 +668,18 @@ if (ua.includes("Locket")) {
         {
             section: "🌸 Trend TikTok",
             items: [
+                {
+                    overlay_id: "caption:hoi_chieu_troi_mua",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#546E7A", "#263238"] },
+                        icon: { data: "🌧️", type: "emoji" },
+                        max_lines: 1,
+                        text: "Hồi chiều trời mưa...",
+                        text_color: "#FFFFFFE6",
+                        type: "static_content",
+                    },
+                },
                 {
                     overlay_id: "caption:tuyet_doi_khong_nghe",
                     source: "remote",
@@ -993,10 +1193,6 @@ if (ua.includes("Locket")) {
             ],
         }
     ]);
-
-    // ============================================================
-    // NHÓM 6: CAMERA & LIVE PHOTOS
-    // ============================================================
     obj.entries.camera_roll = JSON.stringify({
         flash_button: true,
         audio_button: true
@@ -1008,34 +1204,18 @@ if (ua.includes("Locket")) {
         widget_looping_mode: "never",
     });
     obj.entries.camera_roll_preview_enabled = "true";
-
-    // ============================================================
-    // NHÓM 7: UPLOAD — chất lượng cao
-    // ============================================================
     obj.entries.upload_main = "false";
     obj.entries.upload_main_image_quality = "1.0";
     obj.entries.upload_main_image_size = "1440";
     obj.entries.upload_thumbnail_image_quality = "1.0";
     obj.entries.upload_thumbnail_image_size = "1020";
-
-    // ============================================================
-    // NHÓM 8: QR CODE + SEND TO SELF
-    // ============================================================
     obj.entries.qr_code_config = JSON.stringify({
         profile_enabled: true,
         scanning_enabled: true,
     });
     obj.entries.send_to_self_only_mode = "always_enabled";
-
-    // ============================================================
-    // NHÓM 9: JOURNAL / ACTIVITY BAR
-    // ============================================================
     obj.entries.activity_bar_enabled = "true";
     obj.entries.journal_activity_bar_enabled = "true";
-
-    // ============================================================
-    // NHÓM 10: PAYWALL — không bao giờ hiện
-    // ============================================================
     obj.entries.paywall_presentation_config = JSON.stringify({
         uid: "paywall_testflight",
         onboarding: false,
@@ -1049,95 +1229,12 @@ if (ua.includes("Locket")) {
     obj.entries.paywall_config = JSON.stringify({
         uid: "v2_testflight",
         title: { en: "Locket Gold", vi: "Locket Gold" },
-        profile_banner_title: {
-            en: "Locket Gold @duyvinh09",
-            vi: "Locket Gold @duyvinh09",
-        },
+        profile_banner_title: { en: "Locket Gold @duyvinh09", vi: "Locket Gold @duyvinh09", },
         completed_title: {
             en: "Welcome to Gold!\nCracked by duyvinh09",
             vi: "Chào mừng bạn đến với Locket Gold!\nCrack bởi duyvinh09",
         },
-        primary_features: [
-            {
-                emoji: "📱",
-                title: { en: "Follow on TikTok", vi: "Theo dõi kênh TikTok" },
-                subtitle: {
-                    en: "Follow @duyvinh.09 on TikTok!",
-                    vi: "Theo dõi trang TikTok @duyvinh.09 nha!",
-                },
-                early_access: true,
-            },
-            {
-                emoji: "🚫",
-                title: { en: "Remove ads", vi: "Không có quảng cáo!" },
-                subtitle: {
-                    en: "Never see an ad in History!",
-                    vi: "Không bao giờ nhìn thấy một quảng cáo nào nữa",
-                },
-            },
-            {
-                emoji: "🎥",
-                title: { en: "Video Lockets", vi: "Video Lockets" },
-                subtitle: {
-                    en: "Record short video clips!",
-                    vi: "Ghi lại các video clip ngắn!",
-                },
-                early_access: true,
-            },
-            {
-                emoji: "👀",
-                title: { en: "Locket views", vi: "Lượt xem Locket" },
-                subtitle: {
-                    en: "See who's opened your Lockets",
-                    vi: "Xem những người đã mở Locket của bạn",
-                },
-            },
-            {
-                emoji: "🏞️",
-                title: {
-                    en: "Upload from camera roll",
-                    vi: "Tải lên từ cuộn camera",
-                },
-                subtitle: {
-                    en: "Share memories from your library",
-                    vi: "Chia sẻ các kỷ niệm từ thư viện của bạn",
-                },
-            },
-            {
-                emoji: "❤️‍🔥",
-                title: { en: "Unlimited friends", vi: "Thêm bạn bè tùy ý" },
-                subtitle: {
-                    en: "Add as many friends as you'd like!",
-                    vi: "Thêm bao nhiêu bạn bè tùy ý!",
-                },
-                early_access: true,
-            },
-            {
-                emoji: "💛",
-                title: {
-                    en: "Custom app icon",
-                    vi: "Biểu tượng ứng dụng tùy chỉnh",
-                },
-                subtitle: {
-                    en: "Decorate your Home Screen",
-                    vi: "Trang trí Màn hình chính của bạn",
-                },
-            },
-            {
-                emoji: "💬",
-                title: { en: "Send longer captions", vi: "Gửi phụ đề dài hơn" },
-                subtitle: {
-                    en: "Type even more on your photos!",
-                    vi: "Điền nhiều nội dung hơn nữa trên các ảnh của bạn!",
-                },
-            },
-        ],
-        offering_kind: "prod",
     });
-
-    // ============================================================
-    // NHÓM 11: UPSELL FEATURES — bật hết
-    // ============================================================
     obj.entries.upsell_features = JSON.stringify({
         app_icon_picker: true,
         camera_roll: true,
@@ -1146,31 +1243,18 @@ if (ua.includes("Locket")) {
         remove_ads: true,
         custom_widget_frames: true,
     });
-
-    // ============================================================
-    // NHÓM 12: STREAK — dễ khôi phục
-    // ============================================================
     try {
         var streak = JSON.parse(obj.entries.streak_config);
         streak.minimum_recovery_count = 0;
         streak.minimum_display_count = 0;
         obj.entries.streak_config = JSON.stringify(streak);
     } catch (e) {
-        // Nếu parse lỗi, bỏ qua
     }
-
-    // ============================================================
-    // NHÓM 13: CHAT — bật đầy đủ
-    // ============================================================
     obj.entries.chat_reactions_enabled = "true";
     obj.entries.conversation_reactions = "true";
     obj.entries.typing_indicators_enabled = "true";
     obj.entries.unsend_message_enabled = "true";
     obj.entries.reply_prototype_enabled = "true";
-
-    // ============================================================
-    // NHÓM 14: TÍNH NĂNG MỚI (từ file testflight)
-    // ============================================================
     obj.entries.blocked_users_cached_sync_enabled = "true";
     obj.entries.keychain_access_retries = "true";
     obj.entries.refresh_interval = "60";
@@ -1189,93 +1273,59 @@ if (ua.includes("Locket")) {
         streak_visualization_style: "gradient",
         streak_header_minimum_count: 0,
         streak_visualization_minimum_count: 2,
-        overlay_indicators: {
-        location: true,
-        music: true,
-        static_content: true,
-        weather: true,
-        },
+        overlay_indicators: { location: true, music: true, static_content: true, weather: true, },
     });
     obj.entries.journal_activity_bar_enabled = "true";
-
-    // ============================================================
-    // NHÓM 15: SENTRY — giảm log
-    // ============================================================
     obj.entries.sentry_sample_rate = "0";
     obj.entries.sentry_network_tracing = "false";
     obj.entries.sentry_performance_tracking = "false";
     obj.entries.sentry_trace_sample_rate = "0";
     obj.entries.sentry_profiles_sample_rate = "0";
-
-    // ============================================================
-    // NHÓM 16: CACHE — tăng thời gian cache
-    // ============================================================
     obj.entries.image_cache_max_age_sec = "157680000";
     obj.entries.image_cache_max_size = "400000000";
     obj.entries.history_cache_age_days = "1000";
     obj.entries.user_cache_max_age_sec = "691200";
     obj.entries.friends_cache_max_age_sec = "2592000";
-
-    // ============================================================
-    // NHÓM 17: LOCKET COUNT CONFIG — emoji đếm Locket (MỚI THÊM)
-    // ============================================================
     obj.entries.friends_sheet_locket_count_config = JSON.stringify({
         items: [
-        { threshold: 0, icon_name: "heart" },
-        { threshold: 1, icon_name: "heart.fill" },
-        { threshold: 10, emoji: "🤍" },
-        { threshold: 100, emoji: "💛" },
-        { threshold: 500, emoji: "❤️‍🔥" },
-        { threshold: 1000, emoji: "🌟🫶🌟" },
-        { threshold: 2000, emoji: "✨💟✨" },
-        { threshold: 5000, emoji: "⚡️😵‍💫⚡" },
-        { threshold: 10000, emoji: "✨⚡️😱⚡✨" },
+            { threshold: 0, icon_name: "heart" },
+            { threshold: 1, icon_name: "heart.fill" },
+            { threshold: 10, emoji: "🤍" },
+            { threshold: 100, emoji: "💛" },
+            { threshold: 500, emoji: "❤️‍🔥" },
+            { threshold: 1000, emoji: "🌟🫶🌟" },
+            { threshold: 2000, emoji: "✨💟✨" },
+            { threshold: 5000, emoji: "⚡️😵‍💫⚡" },
+            { threshold: 10000, emoji: "✨⚡️😱⚡✨" },
         ],
     });
-
     obj.entries.friend_locket_count_config = JSON.stringify({
         items: [
-        { threshold: 0, icon_name: "heart" },
-        { threshold: 1, icon_name: "heart.fill" },
-        { threshold: 10, emoji: "🤍" },
-        { threshold: 100, emoji: "💛" },
-        { threshold: 500, emoji: "❤️‍🔥" },
-        { threshold: 1000, emoji: "✨💗✨" },
-        { threshold: 2000, emoji: "✨️⭐️✨" },
-        { threshold: 5000, emoji: "✨💎✨" },
-        { threshold: 10000, emoji: "✨🔐💛✨" },
+            { threshold: 0, icon_name: "heart" },
+            { threshold: 1, icon_name: "heart.fill" },
+            { threshold: 10, emoji: "🤍" },
+            { threshold: 100, emoji: "💛" },
+            { threshold: 500, emoji: "❤️‍🔥" },
+            { threshold: 1000, emoji: "✨💗✨" },
+            { threshold: 2000, emoji: "✨️⭐️✨" },
+            { threshold: 5000, emoji: "✨💎✨" },
+            { threshold: 10000, emoji: "✨🔐💛✨" },
         ],
     });
-
-    // ============================================================
-    // NHÓM 18: ROLLCALL — bật đầy đủ (MỚI THÊM)
-    // ============================================================
     obj.entries.rollcall_enabled = "true";
     obj.entries.rollcall_comment_actions = "true";
     obj.entries.rollcall_profile_button = "true";
     obj.entries.rollcall_prompt_export_after_share = "true";
     obj.entries.rollcall_confirm_skip_tagging = "false";
     obj.entries.rollcall_tap_to_tag_enabled = "false";
-
-    // ============================================================
-    // NHÓM 19: LIVE ACTIVITY (MỚI THÊM)
-    // ============================================================
     obj.entries.live_activity_onboarding = "true";
     obj.entries.live_activity_onboarding_variant = "friending";
     obj.entries.register_live_activity_push_to_start_token = "true";
     obj.entries.live_activity_remove_stale_start_token = "true";
     obj.entries.notification_preferences_live_activities = "true";
-
-    // ============================================================
-    // NHÓM 20: NOTIFICATION (MỚI THÊM)
-    // ============================================================
     obj.entries.notification_preferences = "true";
     obj.entries.notification_reply_body_visible = "true";
     obj.entries.prompt_notification_permissions_after_friending = "true";
-
-    // ============================================================
-    // NHÓM 21: WIDGET (MỚI THÊM)
-    // ============================================================
     obj.entries.widget_badge_enabled = "true";
     obj.entries.widget_badge_v2 = "true";
     obj.entries.widget_stale_state_enabled = "false";
@@ -1286,23 +1336,15 @@ if (ua.includes("Locket")) {
         url: "https://public.locketcamera.com/locket-public/widget_frames/midautumn_2026/midautumn_2026.png",
         use_local_time_zone: true,
         placement: "below",
-        start_at: "2005-09-15T00:00:00Z",
-        end_at: "2999-09-30T23:59:59Z",
+        start_at: "2005-09-15T00:00:00",
+        end_at: "2999-09-30T23:59:59",
     });
-
-    // ============================================================
-    // NHÓM 22: CDN & STORAGE (MỚI THÊM)
-    // ============================================================
     obj.entries.cdn_domain_replacements = JSON.stringify({
         "firebasestorage.googleapis.com": "cdn.locketcamera.com",
     });
     obj.entries.cdn_domain_replacements_video = "true";
     obj.entries.storage_bucket = "gs://locket-img";
     obj.entries.storage_bucket_video = "gs://locket-video";
-
-    // ============================================================
-    // NHÓM 23: TÍNH NĂNG KHÁC — bật thêm (MỚI THÊM)
-    // ============================================================
     obj.entries.invite_link_preview_variant = "4";
     obj.entries.zoom_enabled = "true";
     obj.entries.time_travel_rewind_v2_enabled = "true";
@@ -1324,10 +1366,7 @@ if (ua.includes("Locket")) {
     obj.entries.populate_phone_numbers_from_suggest_friends = "true";
     obj.entries.privacy_choices_setting = "true";
     obj.entries.request_att_permission = "true";
-    obj.entries.share_history_config = JSON.stringify({
-        prompt_enabled: false,
-        fetching_enabled: true,
-    });
+    obj.entries.share_history_config = JSON.stringify({ prompt_enabled: false, fetching_enabled: true, });
     obj.entries.share_history_prompt_enabled = "false";
     obj.entries.use_thumbnails_for_sharing = "true";
     obj.entries.use_thumbnails_in_timeline = "true";
