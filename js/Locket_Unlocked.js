@@ -1224,7 +1224,7 @@ if (ua.includes("Locket")) {
     obj.entries.paywall_config = JSON.stringify({
         uid: "v2_testflight",
         title: { en: "Locket Gold", vi: "Locket Gold" },
-        profile_banner_title: { en: "Locket Gold", vi: "Locket Gold", },
+        profile_banner_title: { en: "Locket Gold", vi: "Locket Gold @duyvinh09", },
         completed_title: {
             en: "Welcome to Gold!\nCracked by duyvinh09",
             vi: "Chào mừng bạn đến với Locket Gold!\nCrack bởi duyvinh09",
@@ -1328,7 +1328,7 @@ if (ua.includes("Locket")) {
     obj.entries.widget_sync_token_reload_mode = "clearTokenNever";
     obj.entries.widget_frame_event = JSON.stringify({
         uid: "duyvinh09",
-        url: "https://storage.googleapis.com/locket-public/widget_frames/hcmc_day_2026/hcmc_day_systemLarge@3x.png",
+        url: "https://cdn.upanhlaylink.com/i/RuYKzIiU.png",
         use_local_time_zone: true,
         placement: "below",
         start_at: "2005-09-15T00:00:00",
