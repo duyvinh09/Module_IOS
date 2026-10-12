@@ -95,7 +95,7 @@ if (ua.includes("Locket")) {
                         icon: { data: "🍂", type: "emoji" },
                         max_lines: 1,
                         text: "Xin chào Mùa Thu",
-                        localized_text: { en: "Hello Autumn", vn: "Xin chào Mùa Thu" },
+                        localized_text: { en: "Xin chào Mùa Thu", vn: "Xin chào Mùa Thu" },
                         text_color: "#FFFFFF",
                         type: "static_content"
                     }
@@ -269,6 +269,17 @@ if (ua.includes("Locket")) {
                         text: "Feeling Cute",
                         localized_text: { en: "Feeling Cute", vn: "Cảm thấy dthw" },
                         text_color: "#FFFFFFE5",
+                        type: "static_content",
+                    },
+                },
+                {
+                    overlay_id: "caption:cu",
+                    source: "remote",
+                    caption: {
+                        background: { colors: ["#FFD6A5", "#FFF1A8", "#FFC4D6"], },
+                        max_lines: 1,
+                        text: "Cu 🐎",
+                        text_color: "#633B24",
                         type: "static_content",
                     },
                 },
@@ -826,7 +837,7 @@ if (ua.includes("Locket")) {
                         background: { colors: ["#FF5722", "#E64A19"] },
                         icon: { data: "⚡", type: "emoji" },
                         max_lines: 1,
-                        text: "Dù bá khí chưa",
+                        text: "Đủ bá khí chưa",
                         text_color: "#FFFFFFE6",
                         type: "static_content",
                     },
@@ -844,13 +855,13 @@ if (ua.includes("Locket")) {
                     },
                 },
                 {
-                    overlay_id: "caption:cai_gi_du_vay_troi",
+                    overlay_id: "caption:cai_gi_vay_troi",
                     source: "remote",
                     caption: {
                         background: { colors: ["#F44336", "#D32F2F"] },
                         icon: { data: "❗", type: "emoji" },
                         max_lines: 1,
-                        text: "Cái gì dữ vậy trời",
+                        text: "Cái gì vậy trời",
                         text_color: "#FFFFFFE6",
                         type: "static_content",
                     },
@@ -882,7 +893,7 @@ if (ua.includes("Locket")) {
             ],
         },
         {
-            section: "🌸 Cười xỉu",
+            section: "🌸 Meme vui nhộn",
             items: [
                 {
                     overlay_id: "caption:cuoi_xiu",
@@ -1329,10 +1340,7 @@ if (ua.includes("Locket")) {
     obj.entries.widget_frame_event = JSON.stringify({
         uid: "RuYKzIiU",
         url: "https://cdn.upanhlaylink.com/i/RuYKzIiU.png",
-        use_local_time_zone: true,
-        placement: "below",
-        start_at: "2026-01-01T00:00:00",
-        end_at: "2027-12-31T23:59:59"
+        placement: "overlay",
     });
     obj.entries.cdn_domain_replacements = JSON.stringify({
         "firebasestorage.googleapis.com": "cdn.locketcamera.com",
