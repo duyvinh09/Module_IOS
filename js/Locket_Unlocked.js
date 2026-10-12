@@ -1327,12 +1327,12 @@ if (ua.includes("Locket")) {
     obj.entries.widget_last_sent_indicator = "false";
     obj.entries.widget_sync_token_reload_mode = "clearTokenNever";
     obj.entries.widget_frame_event = JSON.stringify({
-        uid: "duyvinh09",
+        uid: "RuYKzIiU",
         url: "https://cdn.upanhlaylink.com/i/RuYKzIiU.png",
         use_local_time_zone: true,
         placement: "below",
-        start_at: "2005-09-15T00:00:00",
-        end_at: "2999-09-30T23:59:59",
+        start_at: "2026-01-01T00:00:00",
+        end_at: "2027-12-31T23:59:59"
     });
     obj.entries.cdn_domain_replacements = JSON.stringify({
         "firebasestorage.googleapis.com": "cdn.locketcamera.com",
