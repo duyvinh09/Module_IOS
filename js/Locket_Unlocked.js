@@ -41,12 +41,12 @@ if (ua.includes("Locket")) {
     obj.entries.notify_moment_views = "true";
     obj.entries.get_moment_views_as_cloud_function = "true";
     obj.entries.moment_reactions_v2 = "true";
-    obj.entries.max_friends_count = "9999";
+    obj.entries.max_friends_count = "999999";
     obj.entries.friend_limit_mode = "0";
-    obj.entries.soft_friend_limit_threshold_count = "9999";
+    obj.entries.soft_friend_limit_threshold_count = "999999";
     obj.entries.show_friend_limit_on_cam = "false";
-    obj.entries.signup_max_friends_count = "9999";
-    obj.entries.celebrity_inbox_limit = "9999";
+    obj.entries.signup_max_friends_count = "999999";
+    obj.entries.celebrity_inbox_limit = "999999";
     obj.entries.friend_limit_geo_override = JSON.stringify({experiments: {}, area_code_overrides: {},});
     obj.entries.overlay_dynamic_captions = JSON.stringify(["standard", "location", "weather", "time",]);
     obj.entries.overlay_navigator_enabled = "true";
@@ -68,6 +68,7 @@ if (ua.includes("Locket")) {
                 { overlay_id: "caption:streak", source: "local", caption: { type: "streak" }, },
                 { overlay_id: "caption:star_sign", source: "local", caption: { type: "star_sign" }, },
                 { overlay_id: "caption:poll", source: "local", caption: { type: "poll" } },
+                { overlay_id: "caption:colors", source: "local", caption: { type: "colors" } },
                 { overlay_id: "caption:locket_count", source: "local", caption: { type: "locket_count" }, },
             ],
         },
@@ -1224,10 +1225,10 @@ if (ua.includes("Locket")) {
     obj.entries.journal_activity_bar_enabled = "true";
     obj.entries.paywall_presentation_config = JSON.stringify({
         uid: "v1_popup",
-        onboarding: false,
+        onboarding: true,
         after_sent_moment: false,
         on_foreground: false,
-        interval: 2592000,
+        interval: 604800,
         profile_banner: true,
     });
     obj.entries.android_subscribe_gold_button_enabled = "false";
@@ -1237,9 +1238,14 @@ if (ua.includes("Locket")) {
         title: { en: "Locket Gold", vi: "Locket Gold" },
         profile_banner_title: { en: "Locket Gold", vi: "Locket Gold", },
         completed_title: {
-            en: "Welcome to Gold!\nCracked by duyvinh09",
-            vi: "Chào mừng bạn đến với Locket Gold!\nCrack bởi duyvinh09",
+            en: "Welcome to Gold! Cracked by duyvinh09",
+            vi: "Chào mừng bạn đến với Locket Gold! Crack bởi duyvinh09",
         },
+        completed_subtitle: {
+            en: "Have a great experience! 💕",
+            vi: "Chúc bạn có trải nghiệm vui vẻ 💕"
+        },
+        completed_button_title: { en: "Done", vi: "Xong rồi, trải nghiệm thôi" }
     });
     obj.entries.upsell_features = JSON.stringify({
         app_icon_picker: true,
@@ -1338,12 +1344,12 @@ if (ua.includes("Locket")) {
     obj.entries.widget_last_sent_indicator = "false";
     obj.entries.widget_sync_token_reload_mode = "clearTokenNever";
     obj.entries.widget_frame_event = JSON.stringify({
-        uid: "duyvinh09",
-        url: "https://cdn.upanhlaylink.com/i/RuYKzIiU.png",
+        uid: "my_frame",
+        url: "https://cdn.upanhlaylink.com/i/0kmIqkUm.png",
         use_local_time_zone: true,
         placement: "below",
         start_at: "2026-10-12T00:00:00",
-        end_at: "2026-12-31T23:59:59"
+        end_at: "2099-12-31T23:59:59"
     });
     obj.entries.cdn_domain_replacements = JSON.stringify({
         "firebasestorage.googleapis.com": "cdn.locketcamera.com",
