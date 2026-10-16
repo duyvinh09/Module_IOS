@@ -21,11 +21,16 @@
                 <array>
                     <string>api.revenuecat.com</string>
                     <string>app.revenuecat.com</string>
-                    <string>in.appcenter.ms</string>
-                    <string>app-measurement.com</string>
+                    <string>revenuecat.com</string>
+                    <string>www.revenuecat.com</string>
+                    <string>api2.amplitude.com</string>
+                    <string>oy24bn.skadsdkless.appsflyersdk.com</string>
                     <string>firebaselogging-pa.googleapis.com</string>
-                    <string>mixpanel.com</string>
-                    <string>api.mixpanel.com</string>
+                    <string>appsflyersdk.com</string>
+                    <string>ingest.sentry.io</string>
+                    <string>adsmoloco.com</string>
+                    <string>moloco.com</string>
+                    <string>ads.vungle.com</string>
                 </array>
             </dict>
             <key>OnDemandRules</key>
@@ -58,9 +63,9 @@
         </dict>
     </array>
     <key>PayloadDescription</key>
-    <string>Hồ sơ cầu hình VIP chặn thu hồi Locket Gold vĩnh viễn.</string>
+    <string>Hồ sơ cầu hình VIP chặn thu hồi Locket Gold vĩnh viễn.&#10;@duyvinh09</string>
     <key>PayloadDisplayName</key>
-    <string>💛 Locket Gold</string>
+    <string>Locket Gold 💛</string>
     <key>PayloadIdentifier</key>
     <string>com.duyvinh09.locket.vip</string>
     <key>PayloadOrganization</key>
