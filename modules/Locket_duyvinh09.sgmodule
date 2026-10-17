@@ -1,13 +1,12 @@
 #!url=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/modules/Locket_duyvinh09.sgmodule
 #!name=Locket-DuyVinh09_Gold
-#!desc=Crack By DuyVinh09
+#!desc=Crack Full By DuyVinh09
 
 [Script]
-# ~ By Duyvinh09
-# ～ Egern transfer to Shadowrocket & Surge & LanceX
 revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/Locket_DuyVinh09.js, requires-body=true, max-size=-1, timeout=60
 
 deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/deleteHeader.js, timeout=60
 
+locket_rc = type=http-response, pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+, script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/Locket_Unlocked.js, requires-body=true, max-size=-1, timeout=60
 [MITM]
-hostname = %APPEND% api.revenuecat.com
+hostname = %APPEND% api.revenuecat.com, firebaseremoteconfig.googleapis.com

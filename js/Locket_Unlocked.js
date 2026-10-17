@@ -10,7 +10,7 @@ var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
 var obj = JSON.parse($response.body);
 
 if (ua.includes("Locket")) {
-    obj.Attention = "Chúc mừng bạn! Vui lòng không bán hoặc chia sẻ cho người khác!";
+    obj.Attention = "Chúc mừng bạn! Vui lòng không sử dụng chúng dưới mục đích thương mại!";
     obj.entries = obj.entries || {};
 
     // ============================================================
@@ -279,9 +279,9 @@ if (ua.includes("Locket")) {
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
             uid: "midautumn_2026",
-            // url: "https://i.ibb.co/1Yt1Dzzy/Shin-chan-1.png",
+            url: "https://i.ibb.co/1Yt1Dzzy/Shin-chan-1.png",
             // url: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
-            url: "https://i.ibb.co/zTQqc4mK/khung-ins-1.png",
+            // url: "https://i.ibb.co/JjLZ3cvD/khung-ins.png",
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
@@ -368,7 +368,7 @@ if (ua.includes("Locket")) {
         overlay_dynamic_captions: JSON.stringify([
             "standard", "poll", "color_palette", "review", "music", "location",
             "weather", "time", "streak", "star_sign", "party_time", "locket_count",
-            "good_morning", "goodnight", "ootd", "miss_you", "custom", "phunu_2010", "halloween_2026"
+            "good_morning", "goodnight", "ootd", "miss_you", "custom", "halloween_2026"
         ]),
         overlay_items: JSON.stringify([
             {
