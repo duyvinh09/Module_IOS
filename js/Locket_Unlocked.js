@@ -281,7 +281,7 @@ if (ua.includes("Locket")) {
             uid: "midautumn_2026",
             // url: "https://i.ibb.co/1Yt1Dzzy/Shin-chan-1.png",
             // url: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
-            url: "https://i.ibb.co/zTQqc4mK/khung-ins-1.png",
+            url: "https://cdn.upanhlaylink.com/i/RtkBDZyQ.png",
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
