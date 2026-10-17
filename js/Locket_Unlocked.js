@@ -3,6 +3,7 @@
 // Endpoint: firebaseremoteconfig.googleapis.com
 // Dùng cho: Loon / Quantumult X / Surge / Shadowrocket
 // Tác giả: @duyvinh09
+// Vui lòng khi chia sẽ hoặc lấy về, làm ơn để nguồn giúp mình. Mình cảm ơn
 // ============================================================
 
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
@@ -98,10 +99,10 @@ if (ua.includes("Locket")) {
     // ============================================================
     Object.assign(obj.entries, {
         camera: JSON.stringify({
-            gold_max_duration: 30.0,
-            goldMaxDuration: 30.0,
-            max_duration: 30.0,
-            maxDuration: 30.0,
+            gold_max_duration: 45.0,
+            goldMaxDuration: 45.0,
+            max_duration: 45.0,
+            maxDuration: 45.0,
             ultra_wide: true,
             ultraWide: true,
             volume_button: true,
@@ -161,16 +162,6 @@ if (ua.includes("Locket")) {
         camera_roll_video_upload_enabled: "true",
         internal_camera_roll_video_upload_enabled: "true",
         longer_camera_roll_videos_enabled: "true",
-        camera_roll_video_max_duration: "30.0",
-        camera_roll_max_duration: "30.0",
-        camera_roll_duration: "30.0",
-        max_video_duration: "30.0",
-        video_max_duration: "30.0",
-        video_trim_max_duration: "30.0",
-        trim_max_duration: "30.0",
-        gold_max_duration: "30.0",
-        goldMaxDuration: "30.0",
-        video_quality_mbps: "0.6",
         video_sound_enabled: "true",
         microphone_enabled: "true",
         camera_microphone_enabled: "true",
@@ -289,7 +280,8 @@ if (ua.includes("Locket")) {
         widget_frame_event: JSON.stringify({
             uid: "midautumn_2026",
             // url: "https://i.ibb.co/1Yt1Dzzy/Shin-chan-1.png",
-            url: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
+            // url: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
+            url: "https://i.ibb.co/zTQqc4mK/khung-ins-1.png",
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
