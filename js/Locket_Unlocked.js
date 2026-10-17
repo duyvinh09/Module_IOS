@@ -99,10 +99,10 @@ if (ua.includes("Locket")) {
     // ============================================================
     Object.assign(obj.entries, {
         camera: JSON.stringify({
-            gold_max_duration: 45.0,
-            goldMaxDuration: 45.0,
-            max_duration: 45.0,
-            maxDuration: 45.0,
+            gold_max_duration: 60.0,
+            goldMaxDuration: 60.0,
+            max_duration: 60.0,
+            maxDuration: 60.0,
             ultra_wide: true,
             ultraWide: true,
             volume_button: true,
@@ -178,12 +178,14 @@ if (ua.includes("Locket")) {
     // 4. BẠN BÈ, GIỚI HẠN & ĐỀ XUẤT KẾT BẠN
     // ============================================================
     Object.assign(obj.entries, {
-        max_friends_count: "999999",
+        max_friends_count: "999999999",
         friend_limit_mode: "0",
-        soft_friend_limit_threshold_count: "999999",
+        soft_friend_limit_threshold_count: "999999999",
         show_friend_limit_on_cam: "false",
-        signup_max_friends_count: "999999",
-        celebrity_inbox_limit: "999999",
+        signup_max_friends_count: "999999999",
+        celebrity_inbox_limit: "999999999",
+        celebrity_inbox_enabled: "true",
+        celebrity_vip_qr_redemption_enabled: "true",
         friend_limit_geo_override: JSON.stringify({ experiments: {}, area_code_overrides: {} }),
         friends_sheet_locket_count_config: JSON.stringify({
             items: [
@@ -223,7 +225,11 @@ if (ua.includes("Locket")) {
         show_all_contacts: "true",
         show_invite_suggestions: "true",
         show_no_friends_bottom_sheet: "false",
-        signup_allow_skip_add_friends: "true"
+        signup_allow_skip_add_friends: "true",
+        signup_custom_profile_picture: "true",
+        user_data_export_enabled: "true",
+        username_suggestions_enabled: "true",
+
     });
 
     // ============================================================
@@ -253,8 +259,12 @@ if (ua.includes("Locket")) {
         fetch_moments_in_conversation: "true",
         hide_chat_button: "false",
         groups_enabled: "true",
+        group_contact_invites_enabled: "true",
+        groups_onboarding_accept_invite_preview_enabled: "true",
+        chat_hyperlink_enabled_mode: "always_enabled",
         send_to_self_only_mode: "always_enabled",
         time_travel_rewind_v2_enabled: "true",
+        conversation_drafts_enabled: "true",
         calendar_delete_moment_enabled: "true",
         calendar_rewind_enabled: "false",
         locket_yearbook_story_sharing_encouraged: "true",
@@ -263,7 +273,7 @@ if (ua.includes("Locket")) {
         rollcall_profile_button: "true",
         rollcall_prompt_export_after_share: "true",
         rollcall_confirm_skip_tagging: "false",
-        rollcall_tap_to_tag_enabled: "false"
+        rollcall_tap_to_tag_enabled: "false",
     });
 
     // ============================================================
@@ -352,7 +362,7 @@ if (ua.includes("Locket")) {
         use_thumbnails_for_sharing: "true",
         use_thumbnails_in_timeline: "true",
         persist_onboarding_step: "true",
-        onboarding_contact_permission_step: "true"
+        onboarding_contact_permission_step: "true",
     });
 
     // ============================================================
@@ -375,16 +385,17 @@ if (ua.includes("Locket")) {
                 section: "🎨 General",
                 items: [
                     { overlay_id: "caption:standard", source: "local", caption: { type: "standard" } },
+                    { overlay_id: "caption:link", source: "local", caption: { type: "link" } },
                     { overlay_id: "caption:review", source: "local", caption: { type: "review" } },
+                    { overlay_id: "caption:poll", source: "local", caption: { type: "poll" } },
                     { overlay_id: "caption:music", source: "local", caption: { type: "music" } },
                     { overlay_id: "caption:location", source: "local", caption: { type: "location" } },
                     { overlay_id: "caption:weather", source: "local", caption: { type: "weather" } },
                     { overlay_id: "caption:time", source: "local", caption: { type: "time" } },
                     { overlay_id: "caption:streak", source: "local", caption: { type: "streak" } },
                     { overlay_id: "caption:star_sign", source: "local", caption: { type: "star_sign" } },
-                    { overlay_id: "caption:poll", source: "local", caption: { type: "poll" } },
                     { overlay_id: "caption:color_palette", source: "local", caption: { type: "color_palette" } },
-                    { overlay_id: "caption:locket_count", source: "local", caption: { type: "locket_count" } }
+                    { overlay_id: "caption:locket_count", source: "local", caption: { type: "locket_count" } },
                 ]
             },
             {
@@ -402,7 +413,7 @@ if (ua.includes("Locket")) {
             {
                 section: "🎨 Decorative by Duy Vinh",
                 items: [
-                    { overlay_id: "caption:duyvinh09", source: "remote", caption: { background: { colors: ["#B8E7FF", "#A8F5D0", "#DCCBFF"] }, max_lines: 1, text: "💻 duyvinh09", text_color: "#183153", type: "static_content" } },
+                    { overlay_id: "caption:duyvinh09", source: "remote", caption: { background: { colors: ["#B8E7FF", "#A8F5D0", "#DCCBFF"] }, icon: { data: "person.fill", type: "sf_symbol", "color": "#FFFFFFE6" }, max_lines: 1, text: "duyvinh09", text_color: "#183153", type: "static_content" } },
                     { overlay_id: "caption:cu", source: "remote", caption: { background: { colors: ["#FFD6A5", "#FFF1A8", "#FFC4D6"] }, max_lines: 1, text: "Cu 🐎", text_color: "#633B24", type: "static_content" } },
                     { overlay_id: "caption:tuat", source: "remote", caption: { background: { colors: ["#2C1A0E", "#5D4037", "#D7A86E"] }, icon: { data: "🐕", type: "emoji" }, max_lines: 1, text: "Tuất", text_color: "#FFFFFFE6", type: "static_content" } },
                     { overlay_id: "caption:snake_vibes", source: "remote", caption: { background: { colors: ["#2E7D32", "#66BB6A"] }, icon: { data: "🐍", type: "emoji" }, max_lines: 1, text: "Snake Vibes", localized_text: { en: "Snake Vibes", vn: "Chất rắn" }, text_color: "#FFFFFFE6", type: "static_content" } },
