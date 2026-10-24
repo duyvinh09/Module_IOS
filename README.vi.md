@@ -275,6 +275,18 @@ duy trì và cải thiện lâu dài:
 - 🐞 **Tạo Issue** khi phát hiện lỗi hoặc cần báo cáo vấn đề.
 - 🤝 **Gửi Pull Request** để đề xuất tính năng, sửa lỗi hoặc cải thiện tài liệu.
 
+## Nguồn tham khảo và ghi nhận
+
+Một số rule mở khóa ứng dụng trong dự án được tham khảo từ
+[tài nguyên Shadowrocket của YFamilys](https://yfamilys.com/shadowrocket).
+Các rule này đã được **Đinh Duy Vinh** kiểm tra, tinh chỉnh và điều chỉnh để
+phù hợp hơn với các phiên bản ứng dụng hiện tại cũng như cộng đồng người dùng
+Việt Nam.
+
+Việc ghi nhận này không có nghĩa YFamilys duy trì hoặc bảo chứng cho repository
+này. Vui lòng kiểm tra điều khoản của nguồn gốc trước khi phân phối lại các
+cấu hình phái sinh.
+
 ## Liên kết
 
 - [Trang hướng dẫn trực quan](./index.html)

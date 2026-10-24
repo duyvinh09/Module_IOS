@@ -267,6 +267,17 @@ If this project is useful to you, please consider supporting its maintenance:
 - 🐞 **Open an Issue** to report bugs or compatibility problems.
 - 🤝 **Submit a Pull Request** with fixes, improvements, or documentation updates.
 
+## Credits & Attribution
+
+Some of the application-unlock rules in this project were originally referenced
+from [YFamilys Shadowrocket resources](https://yfamilys.com/shadowrocket).
+They were reviewed, refined, and adapted for current application versions and
+the Vietnamese user community by **Đinh Duy Vinh**.
+
+This attribution does not imply that YFamilys maintains or endorses this
+repository. Please review the original source's terms before redistributing
+derived configurations.
+
 ## Links
 
 - [Visual setup guide](./index.html)
