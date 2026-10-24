@@ -1,221 +1,219 @@
 <p align="center">
-  <a href="https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/All_In_One.sgmodule" title="All-in-One module">
+  <a href="https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/All_In_One.sgmodule">
     <img src="https://img.shields.io/badge/version-v2.0-0ea5e9?style=flat-pill" alt="Version v2.0">
   </a>
-  <a href="https://apps.apple.com/app/shadowrocket/id932747118" title="Shadowrocket trên App Store">
+  <a href="https://apps.apple.com/app/shadowrocket/id932747118">
     <img src="https://img.shields.io/badge/platform-iOS-111827?style=flat-pill&logo=apple&logoColor=white" alt="Platform iOS">
   </a>
-  <a href="https://github.com/duyvinh09" title="GitHub của tác giả">
+  <a href="https://github.com/duyvinh09">
     <img src="https://img.shields.io/badge/author-duyvinh09-7c3aed?style=flat-pill&logo=github&logoColor=white" alt="Author duyvinh09">
   </a>
 </p>
 
-<h1 align="center">Module IOS cho Shadowrocket</h1>
+<h1 align="center">iOS Modules for Shadowrocket</h1>
 
 <p align="center">
-  Bộ cấu hình và module dành cho Shadowrocket trên iOS, hỗ trợ mở khóa các tính năng
-  <strong>Premium / Pro / VIP</strong> của những ứng dụng được dự án hỗ trợ.
+  A collection of Shadowrocket configurations, modules, and scripts for enabling
+  supported <strong>Premium / Pro / VIP</strong> features on iOS applications.
+</p>
+
+<p align="center">
+  <a href="./README.vi.md">Đọc bằng tiếng Việt</a>
 </p>
 
 > [!IMPORTANT]
-> Dự án chỉ cung cấp cấu hình kỹ thuật để phục vụ mục đích học tập và tham khảo.
-> Hãy sử dụng với ứng dụng, tài khoản và nội dung mà bạn có quyền sử dụng; đồng thời
-> tuân thủ điều khoản của Shadowrocket, App Store và từng ứng dụng.
+> This project provides technical configurations for educational and reference
+> purposes only. Use them only with applications, accounts, and content you are
+> authorized to use. You are responsible for complying with Shadowrocket, App
+> Store, and third-party application terms of service.
 
-## Nội dung
+## Contents
 
-- [Giới thiệu](#giới-thiệu)
-- [Yêu cầu](#yêu-cầu)
-- [Cài đặt Shadowrocket](#cài-đặt-shadowrocket)
-- [Cài đặt nhanh All-in-One](#cài-đặt-nhanh-all-in-one)
-- [Cấu hình thủ công từng bước](#cấu-hình-thủ-công-từng-bước)
-- [Ứng dụng được hỗ trợ](#ứng-dụng-được-hỗ-trợ)
-- [Tài nguyên trong repository](#tài-nguyên-trong-repository)
-- [Xử lý sự cố](#xử-lý-sự-cố)
-- [Đóng góp](#đóng-góp)
+- [Overview](#overview)
+- [Requirements](#requirements)
+- [Installing Shadowrocket](#installing-shadowrocket)
+- [Quick Start](#quick-start)
+- [Manual Setup](#manual-setup)
+- [Supported Applications](#supported-applications)
+- [Repository Structure](#repository-structure)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
 
-## Giới thiệu
+## Overview
 
-Repository này tập hợp các file `.conf`, `.sgmodule`, `.js` và một số cấu hình
-liên quan để sử dụng với [Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118).
-Các rule/module can thiệp vào request của ứng dụng thông qua proxy cục bộ của
-Shadowrocket. Khi cấu hình phù hợp và VPN đang bật, tính năng được hỗ trợ có thể
-được kích hoạt trong ứng dụng tương ứng.
+This repository contains `.conf`, `.sgmodule`, `.js`, and related configuration
+files for [Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118).
+The rules and scripts process application traffic through Shadowrocket's local
+proxy. When a compatible configuration is active and the VPN is connected,
+supported features may become available in the target application.
 
-Trang hướng dẫn trực quan có sẵn tại [`index.html`](./index.html). README này
-giải thích cách cài đặt theo từng bước để có thể tham khảo ngay cả khi không mở
-trang web.
+For a visual guide, open [`index.html`](./index.html). The complete Vietnamese
+documentation is available in [`README.vi.md`](./README.vi.md).
 
-## Yêu cầu
+## Requirements
 
-- iPhone/iPad chạy iOS và đã cài Shadowrocket.
-- Kết nối Internet ổn định.
-- Quyền cài chứng chỉ CA trên thiết bị nếu sử dụng HTTPS Decryption.
-- Không cài đồng thời nhiều module có cùng mục đích hoặc cùng rule, vì có thể
-  gây xung đột.
+- An iPhone or iPad with Shadowrocket installed.
+- A stable Internet connection.
+- Permission to install and trust a CA certificate when HTTPS Decryption is used.
+- Avoid installing multiple modules that target the same application or rules,
+  as they may conflict.
 
-## Cài đặt Shadowrocket
+## Installing Shadowrocket
 
-### Cách 1: Tải từ App Store (khuyến nghị)
+### Option 1: App Store (recommended)
 
-Mua và cài [Shadowrocket trên App Store](https://apps.apple.com/app/shadowrocket/id932747118).
-Đây là cách chính thức và ổn định nhất để nhận bản cập nhật từ nhà phát triển.
+Purchase and install [Shadowrocket from the App Store](https://apps.apple.com/app/shadowrocket/id932747118).
+This is the official and most reliable installation method.
 
-![Tải Shadowrocket từ App Store](./assets/steps/step1.jpg)
+![Install Shadowrocket from the App Store](./assets/steps/step1.jpg)
 
-### Cách 2: Cài thông qua 3uTools
+### Option 2: 3uTools
 
-Nếu không thể tải từ App Store, có thể dùng máy tính Windows và
-[3uTools](https://www.3u.com/) theo quy trình sau:
+If the App Store is not available, you can use a Windows computer and
+[3uTools](https://www.3u.com/):
 
-1. Cài 3uTools trên máy tính.
-2. Kết nối iPhone bằng cáp USB, chọn **Tin cậy máy tính này?** trên iPhone và
-   nhập mật mã nếu được yêu cầu.
-3. Chờ 3uTools nhận thiết bị và cài ứng dụng 3uTools trên iPhone theo hướng dẫn
-   của phần mềm.
-4. Mở 3uTools trên iPhone, tìm `Shadowrocket` và chọn cài đặt.
+1. Install 3uTools on your computer.
+2. Connect the iPhone with a USB cable. Tap **Trust This Computer** on the
+   iPhone and enter the device passcode if requested.
+3. Wait for 3uTools to detect the device and follow its instructions to install
+   the 3uTools app on the iPhone.
+4. Open 3uTools on the iPhone, search for `Shadowrocket`, and install it.
 
 > [!WARNING]
-> Nút cài đặt trực tiếp trong trang hướng dẫn chỉ hoạt động khi thiết bị đã
-> được 3uTools hỗ trợ/khởi tạo trước đó. Nếu không chạy, hãy cài Shadowrocket
-> từ bên trong ứng dụng 3uTools sau khi kết nối iPhone với máy tính.
+> The direct-install button on the visual guide only works after the device has
+> been initialized or supported by 3uTools. If it does not work, install
+> Shadowrocket from inside the 3uTools app after connecting the iPhone to a
+> computer.
 >
-> Không đăng nhập tài khoản không rõ nguồn gốc vào iCloud. Nếu cần dùng tài
-> khoản khác để tải ứng dụng, chỉ sử dụng trong App Store và đăng xuất sau khi
-> hoàn tất.
+> Never sign an unknown account into iCloud. If another account is required for
+> downloading an app, use it only in the App Store and sign out afterwards.
 
-Ảnh minh họa quá trình chuẩn bị và tải Shadowrocket:
+![Install Shadowrocket with 3uTools](./assets/steps/downloadShadowRocket.jpg)
 
-![Tải Shadowrocket bằng 3uTools](./assets/steps/downloadShadowRocket.jpg)
+## Quick Start
 
-## Cài đặt nhanh All-in-One
+`All_In_One` is the recommended starting point when you want to load the
+project's supported rules and modules together.
 
-`All_In_One` là lựa chọn thuận tiện nếu muốn sử dụng nhiều rule/module trong
-một lần cài đặt.
-
-### Config (`.conf`)
-
-Config dùng để nạp cấu hình chính của Shadowrocket:
+### Config
 
 ```text
 https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/All_In_One.conf
 ```
 
-### Module (`.sgmodule`)
-
-Module dùng để thêm các rule/script vào cấu hình đang sử dụng:
+### Module
 
 ```text
 https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/All_In_One.sgmodule
 ```
 
-Trong Shadowrocket, có thể mở trực tiếp bằng các liên kết sau:
+Open them directly from an iOS device with Shadowrocket installed:
 
-- [Mở All_In_One.conf trong Shadowrocket](shadowrocket://config/add/https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/All_In_One.conf)
-- [Cài All_In_One.sgmodule trong Shadowrocket](shadowrocket://install?module=https%3A%2F%2Fraw.githubusercontent.com%2Fduyvinh09%2FModule_IOS%2Frefs%2Fheads%2Fmain%2FAll_In_One.sgmodule)
+- [Open All_In_One.conf in Shadowrocket](shadowrocket://config/add/https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/All_In_One.conf)
+- [Install All_In_One.sgmodule in Shadowrocket](shadowrocket://install?module=https%3A%2F%2Fraw.githubusercontent.com%2Fduyvinh09%2FModule_IOS%2Frefs%2Fheads%2Fmain%2FAll_In_One.sgmodule)
 
-> Nếu liên kết `shadowrocket://` không mở được, hãy sao chép URL và thêm thủ công
-> trong tab **Cấu hình**.
+If a `shadowrocket://` link does not open, copy the raw URL and add it manually
+from the **Configuration** tab.
 
-## Cấu hình thủ công từng bước
+## Manual Setup
 
-Các bước dưới đây áp dụng cho `All_In_One.conf` và `All_In_One.sgmodule`.
-Tên menu có thể thay đổi nhẹ tùy phiên bản iOS hoặc Shadowrocket.
+The following steps apply to `All_In_One.conf` and `All_In_One.sgmodule`.
+Menu names can vary slightly between iOS and Shadowrocket versions.
 
-### 1. Nhập config và module
+### 1. Import the config and module
 
-Trong Shadowrocket, mở tab **Cấu hình**:
+Open the **Configuration** tab in Shadowrocket:
 
-1. Nhấn dấu **+**.
-2. Dán URL `All_In_One.conf` để tải config.
-3. Nhấn dấu **+** lần nữa và thêm URL `All_In_One.sgmodule`.
+1. Tap **+**.
+2. Paste the `All_In_One.conf` URL and download it.
+3. Tap **+** again and add the `All_In_One.sgmodule` URL.
 
-![Nhập config và module vào Shadowrocket](./assets/steps/step2.jpg)
+![Import the config and module](./assets/steps/step2.jpg)
 
-### 2. Chọn config đang sử dụng
+### 2. Select the active config
 
-Chọn cấu hình `All_In_One.conf` vừa tải, sau đó nhấn **Sử dụng Config**.
+Select `All_In_One.conf` and tap **Use Config**.
 
-![Chọn và sử dụng All_In_One.conf](./assets/steps/step3.jpg)
+![Select and use All_In_One.conf](./assets/steps/step3.jpg)
 
-### 3. Bật HTTPS Decryption
+### 3. Enable HTTPS Decryption
 
-Nhấn biểu tượng thông tin màu xanh bên cạnh `All_In_One.conf`, mở
-**Giải mã HTTPS (HTTPS Decryption)** và bật tính năng này.
+Tap the blue information icon next to `All_In_One.conf`, open
+**HTTPS Decryption**, and enable it.
 
-![Bật HTTPS Decryption](./assets/steps/step4.jpg)
+![Enable HTTPS Decryption](./assets/steps/step4.jpg)
 
-### 4. Tạo và cài chứng chỉ CA
+### 4. Generate and install the CA certificate
 
-Khi Shadowrocket yêu cầu chứng chỉ, chọn lần lượt:
+When prompted by Shadowrocket, choose:
 
-1. **Tạo chứng chỉ CA mới**.
-2. **Cài đặt Chứng chỉ CA vào Hệ thống**.
-3. Chọn **Cho phép**, sau đó **Đóng**.
+1. **Generate a New CA Certificate**.
+2. **Install CA Certificate**.
+3. Tap **Allow**, then **Close**.
 
-![Xác nhận cài chứng chỉ CA](./assets/steps/step5.jpg)
+![Generate and install the CA certificate](./assets/steps/step5.jpg)
 
-### 5. Cài chứng chỉ trong phần Cài đặt của iPhone
+### 5. Install the certificate in iOS Settings
 
-Mở **Cài đặt** → **Cài đặt chung** → **Quản lý VPN & Thiết bị**, sau đó chọn
-và cài chứng chỉ vừa tạo.
+Open **Settings** → **General** → **VPN & Device Management**, then install
+the certificate you just generated.
 
-![Cài chứng chỉ trong Quản lý VPN & Thiết bị](./assets/steps/step6.jpg)
+![Install the certificate in VPN & Device Management](./assets/steps/step6.jpg)
 
-### 6. Tin cậy chứng chỉ
+### 6. Trust the certificate
 
-Mở **Cài đặt** → **Cài đặt chung** → **Giới thiệu** →
-**Cài đặt tin cậy chứng nhận**, bật chứng chỉ của **Shadowrocket** và xác nhận.
+Open **Settings** → **General** → **About** → **Certificate Trust Settings**.
+Enable the Shadowrocket certificate and confirm.
 
-![Bật tin cậy chứng chỉ Shadowrocket](./assets/steps/step7.jpg)
+![Trust the Shadowrocket certificate](./assets/steps/step7.jpg)
 
-### 7. Bật kết nối
+### 7. Start the connection
 
-Quay lại Shadowrocket, chuyển về tab **Nhà** và bật **Kết nối**. Khi biểu tượng
-**VPN** xuất hiện trong Trung tâm điều khiển, cấu hình đã hoạt động.
+Return to Shadowrocket, open the **Home** tab, and enable **Connection**. The
+configuration is active when the **VPN** indicator appears in Control Center.
 
-![Bật kết nối VPN trong Shadowrocket](./assets/steps/step8.jpg)
+![Enable the Shadowrocket VPN connection](./assets/steps/step8.jpg)
 
-## Ứng dụng được hỗ trợ
+## Supported Applications
 
-Danh sách dưới đây được tổng hợp từ trang hướng dẫn và có thể thay đổi theo
-phiên bản ứng dụng, máy chủ hoặc rule hiện tại:
+The list below is based on the current project configuration and may change
+depending on the application version, server-side changes, or active rules.
 
-| Ứng dụng | Tính năng tham khảo |
+| Application | Supported features |
 | --- | --- |
-| Alight Motion | Pro, loại bỏ watermark |
-| BeautyPlus | Tính năng VIP |
-| CamScanner | Tính năng VIP |
-| KineMaster | Pro, loại bỏ watermark |
-| Lightroom | Tính năng Premium (cần tài khoản Lightroom đã từng lên Pro) |
-| Locket | Locket Gold Unlocket full tính năng mà Gold thường không có |
-| PicsArt | Công cụ Premium |
-| Snow | VIP |
+| Alight Motion | Pro features, watermark removal |
+| BeautyPlus | VIP features |
+| CamScanner | VIP features |
+| KineMaster | Pro features, watermark removal |
+| Lightroom | Premium features (may require a compatible Adobe account) |
+| Locket | Locket Gold |
+| PicsArt | Premium tools |
+| Snow | VIP features |
 | SoundCloud | Go+ |
-| Spotify | Giảm quảng cáo, tính năng âm thanh |
-| VSCO | Filter và công cụ Studio |
-| Wink | Tính năng VIP |
-| Truecaller | Gold và caller ID |
-| YouTube | Chặn quảng cáo, phát nền |
+| Spotify | Ad reduction and audio features |
+| VSCO | Filters and Studio tools |
+| Wink | VIP features |
+| Truecaller | Gold and caller ID features |
+| YouTube | Ad blocking and background playback |
 
-> Kết quả không được đảm bảo cho mọi phiên bản ứng dụng. Nếu nhà cung cấp thay
-> đổi API hoặc cơ chế xác thực, module có thể cần được cập nhật.
+> Compatibility is not guaranteed for every version. Application providers may
+> change their APIs or authentication systems without notice.
 
-## Tài nguyên trong repository
+## Repository Structure
 
 ```text
 .
-├── All_In_One.conf              # Config tổng hợp cho Shadowrocket
-├── All_In_One.sgmodule          # Module tổng hợp
-├── shadowrocket_basic.conf      # Config cơ bản
-├── modules/                     # Module riêng cho từng ứng dụng/tính năng
-├── js/                          # Script xử lý request/response
-├── assets/steps/                # Ảnh hướng dẫn cài đặt
-├── assets/*.mobileconfig        # Cấu hình bổ sung
-└── index.html                   # Trang hướng dẫn trực quan
+├── All_In_One.conf              # Combined Shadowrocket configuration
+├── All_In_One.sgmodule          # Combined module
+├── shadowrocket_basic.conf      # Basic configuration
+├── modules/                     # Application-specific modules
+├── js/                          # Request and response scripts
+├── assets/steps/                # Setup screenshots
+├── assets/*.mobileconfig        # Additional device configurations
+└── index.html                   # Visual setup guide
 ```
 
-Một số module riêng:
+Available standalone modules include:
 
 - [Locket](./modules/Locket_duyvinh09.sgmodule)
 - [BeautyPlus](./modules/BeautyPlus.sgmodule)
@@ -225,64 +223,63 @@ Một số module riêng:
 - [iOS Location Spoofer](./modules/ios-location-spoofer.sgmodule)
 - [iTunes](./modules/itunes.sgmodule)
 
-Khi chỉ cần một ứng dụng, ưu tiên cài module riêng thay vì `All_In_One` để
-giảm số rule và hạn chế xung đột.
+When you only need one application, use its standalone module instead of
+`All_In_One` to reduce the number of active rules and potential conflicts.
 
-## Xử lý sự cố
+## Troubleshooting
 
-### Module đã cài nhưng không có tác dụng
+### The module is installed but does not work
 
-- Kiểm tra Shadowrocket đang **Kết nối** và biểu tượng VPN đang hiển thị.
-- Kiểm tra module đã được bật trong cấu hình đang sử dụng.
-- Đóng hoàn toàn ứng dụng cần áp dụng, sau đó mở lại.
-- Cập nhật lại module từ URL raw của repository.
-- Kiểm tra phiên bản ứng dụng có nằm trong phạm vi tương thích hay không.
+- Confirm that Shadowrocket is connected and the VPN indicator is visible.
+- Verify that the module is enabled in the active configuration.
+- Force-close and reopen the target application.
+- Update the module from the repository's raw URL.
+- Check whether the installed application version is supported.
 
-### HTTPS Decryption không hoạt động
+### HTTPS Decryption does not work
 
-- Đảm bảo đã tạo và cài chứng chỉ CA trong Shadowrocket.
-- Đảm bảo đã bật tin cậy chứng chỉ tại **Cài đặt tin cậy chứng nhận**.
-- Nếu đã đổi hoặc xóa chứng chỉ, tạo lại chứng chỉ mới rồi thực hiện lại các
-  bước cài đặt.
+- Confirm that the CA certificate was generated and installed in Shadowrocket.
+- Confirm that it is trusted under **Certificate Trust Settings**.
+- If the certificate was removed or replaced, generate a new one and repeat the
+  installation steps.
 
-### Ứng dụng không có mạng sau khi bật VPN
+### The application loses network access
 
-- Tắt các module không cần thiết để tìm rule gây xung đột.
-- Thử chuyển sang config cơ bản hoặc tắt module riêng vừa cài.
-- Tắt Shadowrocket khi không sử dụng để tránh hao pin và ảnh hưởng kết nối.
+- Disable unnecessary modules to identify conflicting rules.
+- Try the basic configuration or disable the module added most recently.
+- Turn Shadowrocket off when it is not needed to reduce battery usage.
 
-## Đóng góp
+## Contributing
 
-Issue và pull request được hoan nghênh. Khi gửi thay đổi, vui lòng:
+Issues and pull requests are welcome. Before submitting a change:
 
-1. Mô tả ứng dụng và phiên bản iOS/ứng dụng đã kiểm tra.
-2. Nêu rõ file config/module/script bị ảnh hưởng.
-3. Không đưa thông tin cá nhân, token, tài khoản hoặc dữ liệu nhạy cảm vào
-   repository.
-4. Kiểm tra lại cú pháp rule và cập nhật hướng dẫn nếu thay đổi quy trình cài
-   đặt.
+1. Include the application, iOS version, and application version tested.
+2. Identify the affected config, module, or script.
+3. Do not commit personal data, tokens, accounts, or other sensitive information.
+4. Validate rule syntax and update the documentation when the setup process
+   changes.
 
-## Ủng hộ dự án
+## Support the Project
 
-Nếu repository này hữu ích với bạn, sự ủng hộ của cộng đồng sẽ giúp dự án được
-duy trì và cải thiện lâu dài:
+If this project is useful to you, please consider supporting its maintenance:
 
-- ⭐ **Star repository** để đánh dấu và giúp dự án được nhiều người biết đến.
-- 🐞 **Tạo Issue** khi phát hiện lỗi hoặc cần báo cáo vấn đề.
-- 🤝 **Gửi Pull Request** để đề xuất tính năng, sửa lỗi hoặc cải thiện tài liệu.
+- ⭐ **Star the repository** to bookmark it and help others discover the project.
+- 🐞 **Open an Issue** to report bugs or compatibility problems.
+- 🤝 **Submit a Pull Request** with fixes, improvements, or documentation updates.
 
-## Liên kết
+## Links
 
-- [Trang hướng dẫn trực quan](./index.html)
-- [Shadowrocket trên App Store](https://apps.apple.com/app/shadowrocket/id932747118)
-- [Trang chính thức 3uTools](https://www.3u.com/)
-- [GitHub duyvinh09](https://github.com/duyvinh09)
+- [Visual setup guide](./index.html)
+- [Vietnamese documentation](./README.vi.md)
+- [Shadowrocket on the App Store](https://apps.apple.com/app/shadowrocket/id932747118)
+- [Official 3uTools website](https://www.3u.com/)
+- [GitHub profile](https://github.com/duyvinh09)
 
-## Giấy phép
+## License
 
-Repository hiện chưa khai báo giấy phép sử dụng. Nếu bạn muốn fork, phân phối
-hoặc tích hợp các file trong dự án, hãy liên hệ tác giả để xác nhận quyền sử
-dụng và phạm vi phân phối.
+This repository does not currently include a license. If you intend to fork,
+redistribute, or integrate these files, contact the author to confirm usage
+rights and redistribution terms.
 
 <p align="center">
   Made with ❤️ for the iOS automation community by
