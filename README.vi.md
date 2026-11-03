@@ -33,7 +33,6 @@
 - [Cài đặt Shadowrocket](#cài-đặt-shadowrocket)
 - [Cài đặt nhanh All-in-One](#cài-đặt-nhanh-all-in-one)
 - [Cấu hình thủ công từng bước](#cấu-hình-thủ-công-từng-bước)
-- [Ứng dụng được hỗ trợ](#ứng-dụng-được-hỗ-trợ)
 - [Tài nguyên trong repository](#tài-nguyên-trong-repository)
 - [Xử lý sự cố](#xử-lý-sự-cố)
 - [Đóng góp](#đóng-góp)
@@ -180,31 +179,6 @@ Quay lại Shadowrocket, chuyển về tab **Nhà** và bật **Kết nối**. K
 
 ![Bật kết nối VPN trong Shadowrocket](./assets/steps/step8.jpg)
 
-## Ứng dụng được hỗ trợ
-
-Danh sách dưới đây được tổng hợp từ trang hướng dẫn và có thể thay đổi theo
-phiên bản ứng dụng, máy chủ hoặc rule hiện tại:
-
-| Ứng dụng | Tính năng tham khảo |
-| --- | --- |
-| Alight Motion | Pro, loại bỏ watermark |
-| BeautyPlus | Tính năng VIP |
-| CamScanner | Tính năng VIP |
-| KineMaster | Pro, loại bỏ watermark |
-| Lightroom | Tính năng Premium (cần tài khoản Lightroom đã từng lên Pro) |
-| Locket | Locket Gold Unlocket full tính năng mà Gold thường không có |
-| PicsArt | Công cụ Premium |
-| Snow | VIP |
-| SoundCloud | Go+ |
-| Spotify | Giảm quảng cáo, tính năng âm thanh |
-| VSCO | Filter và công cụ Studio |
-| Wink | Tính năng VIP |
-| Truecaller | Gold và caller ID |
-| YouTube | Chặn quảng cáo, phát nền |
-
-> Kết quả không được đảm bảo cho mọi phiên bản ứng dụng. Nếu nhà cung cấp thay
-> đổi API hoặc cơ chế xác thực, module có thể cần được cập nhật.
-
 ## Tài nguyên trong repository
 
 ```text
@@ -218,19 +192,6 @@ phiên bản ứng dụng, máy chủ hoặc rule hiện tại:
 ├── assets/*.mobileconfig        # Cấu hình bổ sung
 └── index.html                   # Trang hướng dẫn trực quan
 ```
-
-Một số module riêng:
-
-- [Locket](./modules/Locket_duyvinh09.sgmodule)
-- [BeautyPlus](./modules/BeautyPlus.sgmodule)
-- [Camera360](./modules/Camera360.sgmodule)
-- [SODA](./modules/SODA.sgmodule)
-- [Snow](./modules/snow.sgmodule)
-- [iOS Location Spoofer](./modules/ios-location-spoofer.sgmodule)
-- [iTunes](./modules/itunes.sgmodule)
-
-Khi chỉ cần một ứng dụng, ưu tiên cài module riêng thay vì `All_In_One` để
-giảm số rule và hạn chế xung đột.
 
 ## Xử lý sự cố
 
@@ -274,18 +235,6 @@ duy trì và cải thiện lâu dài:
 - ⭐ **Star repository** để đánh dấu và giúp dự án được nhiều người biết đến.
 - 🐞 **Tạo Issue** khi phát hiện lỗi hoặc cần báo cáo vấn đề.
 - 🤝 **Gửi Pull Request** để đề xuất tính năng, sửa lỗi hoặc cải thiện tài liệu.
-
-## Nguồn tham khảo và ghi nhận
-
-Một số rule mở khóa ứng dụng trong dự án được tham khảo từ
-[tài nguyên Shadowrocket của YFamilys](https://yfamilys.com/shadowrocket).
-Các rule này đã được **Đinh Duy Vinh** kiểm tra, tinh chỉnh và điều chỉnh để
-phù hợp hơn với các phiên bản ứng dụng hiện tại cũng như cộng đồng người dùng
-Việt Nam.
-
-Việc ghi nhận này không có nghĩa YFamilys duy trì hoặc bảo chứng cho repository
-này. Vui lòng kiểm tra điều khoản của nguồn gốc trước khi phân phối lại các
-cấu hình phái sinh.
 
 ## Liên kết
 

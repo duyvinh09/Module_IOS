@@ -34,7 +34,6 @@
 - [Installing Shadowrocket](#installing-shadowrocket)
 - [Quick Start](#quick-start)
 - [Manual Setup](#manual-setup)
-- [Supported Applications](#supported-applications)
 - [Repository Structure](#repository-structure)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
@@ -174,31 +173,6 @@ configuration is active when the **VPN** indicator appears in Control Center.
 
 ![Enable the Shadowrocket VPN connection](./assets/steps/step8.jpg)
 
-## Supported Applications
-
-The list below is based on the current project configuration and may change
-depending on the application version, server-side changes, or active rules.
-
-| Application | Supported features |
-| --- | --- |
-| Alight Motion | Pro features, watermark removal |
-| BeautyPlus | VIP features |
-| CamScanner | VIP features |
-| KineMaster | Pro features, watermark removal |
-| Lightroom | Premium features (may require a compatible Adobe account) |
-| Locket | Locket Gold |
-| PicsArt | Premium tools |
-| Snow | VIP features |
-| SoundCloud | Go+ |
-| Spotify | Ad reduction and audio features |
-| VSCO | Filters and Studio tools |
-| Wink | VIP features |
-| Truecaller | Gold and caller ID features |
-| YouTube | Ad blocking and background playback |
-
-> Compatibility is not guaranteed for every version. Application providers may
-> change their APIs or authentication systems without notice.
-
 ## Repository Structure
 
 ```text
@@ -212,19 +186,6 @@ depending on the application version, server-side changes, or active rules.
 ├── assets/*.mobileconfig        # Additional device configurations
 └── index.html                   # Visual setup guide
 ```
-
-Available standalone modules include:
-
-- [Locket](./modules/Locket_duyvinh09.sgmodule)
-- [BeautyPlus](./modules/BeautyPlus.sgmodule)
-- [Camera360](./modules/Camera360.sgmodule)
-- [SODA](./modules/SODA.sgmodule)
-- [Snow](./modules/snow.sgmodule)
-- [iOS Location Spoofer](./modules/ios-location-spoofer.sgmodule)
-- [iTunes](./modules/itunes.sgmodule)
-
-When you only need one application, use its standalone module instead of
-`All_In_One` to reduce the number of active rules and potential conflicts.
 
 ## Troubleshooting
 
@@ -266,25 +227,6 @@ If this project is useful to you, please consider supporting its maintenance:
 - ⭐ **Star the repository** to bookmark it and help others discover the project.
 - 🐞 **Open an Issue** to report bugs or compatibility problems.
 - 🤝 **Submit a Pull Request** with fixes, improvements, or documentation updates.
-
-## Credits & Attribution
-
-Some of the application-unlock rules in this project were originally referenced
-from [YFamilys Shadowrocket resources](https://yfamilys.com/shadowrocket).
-They were reviewed, refined, and adapted for current application versions and
-the Vietnamese user community by **Đinh Duy Vinh**.
-
-This attribution does not imply that YFamilys maintains or endorses this
-repository. Please review the original source's terms before redistributing
-derived configurations.
-
-## Links
-
-- [Visual setup guide](./index.html)
-- [Vietnamese documentation](./README.vi.md)
-- [Shadowrocket on the App Store](https://apps.apple.com/app/shadowrocket/id932747118)
-- [Official 3uTools website](https://www.3u.com/)
-- [GitHub profile](https://github.com/duyvinh09)
 
 ## License
 
