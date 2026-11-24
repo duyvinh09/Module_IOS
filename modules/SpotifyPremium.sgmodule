@@ -5,11 +5,13 @@
 http-request ^https:\/\/(?:spclient\.wg\.spotify\.com|[\w-]+-spclient\.spotify\.com)(?::443)?\/user-customization-service\/v1\/customize header-del if-none-match
 
 [Script]
-# 1. Đổi platform iPhone sang iPad để chọn bài tùy ý
-spotify-json = type=http-request,pattern=^https:\/\/(?:spclient\.wg\.spotify\.com|[\w-]+-spclient\.spotify\.com)(?::443)?\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/,requires-body=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/spotify-json.js
+# Spotify: GUI_ANH_VU.md sections 4-8; build r3
+spotify-json = type=http-request,pattern=^https:\/\/(?:spclient\.wg\.spotify\.com|[\w-]+-spclient\.spotify\.com)(?::443)?\/(?:artistview|album-entity-view)\/,requires-body=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/spotify-json.js,script-update-interval=0
+spotify-request = type=http-request,pattern=^https?:\/\/(?:(?:spclient\.wg\.spotify\.com|[\w-]+-spclient\.spotify\.com)(?::443)?\/(?:device-capabilities\/v1\/capabilities|reachability\/check|ads(?:\/|$)|ad-logic(?:\/|$)|pendragon(?:\/|$)|speechless(?:\/|$)|track-error\/v1\/errors|[^?#]*recommendations-in-free-tier-playlist)|apresolve\.spotify\.com(?::443)?\/resolve|(?:[\w-]+\.)*akamaized\.net(?::443)?\/),requires-body=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/spotify-request.js,script-update-interval=0
+spotify-state = type=http-response,pattern=^https:\/\/(?:spclient\.wg\.spotify\.com|[\w-]+-spclient\.spotify\.com)(?::443)?\/(?:melody\/v1\/check_product_state|user-attributes\/|product-state\/v1\/values),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/spotify-state.js,script-update-interval=0
+spotify-proto = type=http-response,pattern=^https:\/\/(?:spclient\.wg\.spotify\.com|[\w-]+-spclient\.spotify\.com)(?::443)?\/(?:bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize|pam-view-service\/|nebula\/v1\/attributes|configuration\/attributes),requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/spotify-proto.js,script-update-interval=0
 
-# 2. Xử lý Protobuf: Bootstrap, Customize và PAM Badge (đã mở rộng bắt pam-view-service/)
-spotify-proto = type=http-response,pattern=^https:\/\/(?:spclient\.wg\.spotify\.com|[\w-]+-spclient\.spotify\.com)(?::443)?\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize|pam-view-service\/),requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/spotify-proto.js,script-update-interval=0
+
 
 [MITM]
-hostname = %APPEND% spclient.wg.spotify.com, *-spclient.spotify.com, *spclient.spotify.com
+hostname = %APPEND% apresolve.spotify.com, *.akamaized.net, spclient.wg.spotify.com, *-spclient.spotify.com, *spclient.spotify.com
