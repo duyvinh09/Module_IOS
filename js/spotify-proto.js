@@ -9,9 +9,17 @@ let protobuf;!function(g){"use strict";!function(r,e,t){var i=function t(i){var 
 const spotifyJson = {"options":{"java_package":"com.smile.spotify.model"},"nested":{"BootstrapResponse":{"oneofs":{"ucsResponse":{"oneof":["ucsResponseV0"]},"trialsFacadeResponse":{"oneof":["trialsFacadeResponseV1"]}},"fields":{"ucsResponseV0":{"type":"UcsResponseWrapperV0","id":2},"trialsFacadeResponseV1":{"type":"TrialsFacadeResponseWrapperV1","id":3}}},"UcsResponseWrapperV0":{"oneofs":{"result":{"oneof":["success","error"]}},"fields":{"success":{"type":"UcsResponseWrapperSuccess","id":1},"error":{"type":"UcsResponseWrapperError","id":2}}},"UcsResponseWrapperSuccess":{"fields":{"customization":{"type":"UcsResponseWrapper","id":1}}},"UcsResponseWrapperError":{"fields":{"errorCode":{"type":"int32","id":1},"message":{"type":"string","id":2},"logId":{"type":"string","id":3}}},"TrialsFacadeResponseWrapperV1":{"oneofs":{"result":{"oneof":["success","error"]}},"fields":{"success":{"type":"TrialsFacadeResponseWrapperSuccess","id":1},"error":{"type":"TrialsFacadeResponseWrapperError","id":2}}},"TrialsFacadeResponseWrapperError":{"fields":{"errorCode":{"type":"int32","id":1},"message":{"type":"string","id":2},"logId":{"type":"string","id":3}}},"TrialsFacadeResponseWrapperSuccess":{"fields":{"field1":{"type":"int32","id":1}}},"UcsResponseWrapper":{"oneofs":{"result":{"oneof":["success","error"]}},"fields":{"success":{"type":"UcsResponse","id":1},"error":{"type":"Error","id":2}}},"UcsResponse":{"oneofs":{"resolveResult":{"oneof":["resolveSuccess","resolveError"]},"accountAttributesResult":{"oneof":["accountAttributesSuccess","accountAttributesError"]}},"fields":{"resolveSuccess":{"type":"ResolveResponse","id":1},"resolveError":{"type":"Error","id":2},"accountAttributesSuccess":{"type":"AccountAttributesResponse","id":3},"accountAttributesError":{"type":"Error","id":4},"fetchTimeMillis":{"type":"int64","id":5}}},"ResolveResponse":{"fields":{"configuration":{"type":"Configuration","id":1}}},"Configuration":{"fields":{"configurationAssignmentId":{"type":"string","id":1},"fetchTimeMillis":{"type":"int64","id":2},"assignedValues":{"rule":"repeated","type":"AssignedValue","id":3},"policySnapshotId":{"type":"int64","id":4}}},"AssignedValue":{"oneofs":{"structuredValue":{"oneof":["boolValue","intValue","enumValue"]}},"fields":{"propertyId":{"type":"Identifier","id":1},"metadata":{"type":"Metadata","id":2},"boolValue":{"type":"BoolValue","id":3},"intValue":{"type":"IntValue","id":4},"enumValue":{"type":"EnumValue","id":5}}},"Identifier":{"fields":{"scope":{"type":"string","id":1},"name":{"type":"string","id":2}}},"Metadata":{"fields":{"policyId":{"type":"int64","id":1},"externalRealm":{"type":"string","id":2},"externalRealmId":{"type":"int64","id":3}}},"BoolValue":{"fields":{"value":{"type":"bool","id":1}}},"EnumValue":{"fields":{"value":{"type":"string","id":1}}},"IntValue":{"fields":{"value":{"type":"int32","id":1}}},"AccountAttributesResponse":{"fields":{"accountAttributes":{"keyType":"string","type":"AccountAttribute","id":1}}},"AccountAttribute":{"oneofs":{"value":{"oneof":["boolValue","longValue","stringValue"]}},"fields":{"boolValue":{"type":"bool","id":2},"longValue":{"type":"int64","id":3},"stringValue":{"type":"string","id":4}}},"Error":{"fields":{"errorCode":{"type":"int32","id":1},"errorMessage":{"type":"string","id":2}}}}};
 
 // ==================== BỘ XỬ LÝ PROTOBUF WIRE REWRITER (PAM) ====================
+// Use bundled protobuf UTF-8 support; TextEncoder is not required.
+function utf8Bytes(text) {
+    const bytes = new Uint8Array(protobuf.util.utf8.length(text));
+    protobuf.util.utf8.write(text, bytes, 0);
+    return bytes;
+}
 const PAM_PAIRS = [
-    { from: new TextEncoder().encode("Spotify Free"), to: new TextEncoder().encode("Spotify Premium") },
-    { from: new TextEncoder().encode("#B3B3B3"), to: new TextEncoder().encode("#1DB954") }
+    { from: utf8Bytes("Spotify Premium"), to: utf8Bytes("duyvinh09") },
+    { from: utf8Bytes("#1DB954"), to: utf8Bytes("#FFD700") },
+    { from: utf8Bytes("Spotify Free"), to: utf8Bytes("duyvinh09") },
+    { from: utf8Bytes("#B3B3B3"), to: utf8Bytes("#FFD700") }
 ];
 
 function readVarint(buf, pos) {
@@ -115,6 +123,36 @@ function rewriteMessage(data, depth) {
 }
 
 function patchPam(buf) {
+    const headers = $response.headers || {};
+    const contentType = Object.keys(headers).filter(key => key.toLowerCase() === 'content-type').map(key => headers[key]).join('');
+    if (/grpc-web-text/i.test(contentType)) return buf; // Base64 transport: preserve unchanged.
+    if (/grpc-web/i.test(contentType)) {
+        try {
+            let offset = 0;
+            const out = [];
+            while (offset < buf.length) {
+                if (offset + 5 > buf.length) throw new Error('truncated gRPC header');
+                const flag = buf[offset];
+                const size = new DataView(buf.buffer, buf.byteOffset + offset + 1, 4).getUint32(0);
+                if (offset + 5 + size > buf.length) throw new Error('truncated gRPC payload');
+                const payload = buf.subarray(offset + 5, offset + 5 + size);
+                // Only uncompressed data frames; preserve trailers and compressed frames.
+                const patched = flag === 0 ? patchPamProto(payload) : payload;
+                out.push(flag, (patched.length >>> 24) & 255, (patched.length >>> 16) & 255,
+                    (patched.length >>> 8) & 255, patched.length & 255);
+                for (let i = 0; i < patched.length; i++) out.push(patched[i]);
+                offset += 5 + size;
+            }
+            return new Uint8Array(out);
+        } catch (e) {
+            console.log('[Spotify] preserve gRPC body: ' + e);
+            return buf;
+        }
+    }
+    return patchPamProto(buf);
+}
+
+function patchPamProto(buf) {
     try {
         const res = rewriteMessage(buf, 0);
         return res.changed ? res.data : buf;
@@ -126,7 +164,7 @@ function patchPam(buf) {
 
 // ==================== ĐIỀU PHỐI CHÍNH ====================
 const resStatus = $response.status ? $response.status : $response.statusCode;
-if (resStatus !== 200) {
+if (Number(resStatus) !== 200) {
     $done({});
 } else {
     const url = $request.url;
@@ -137,12 +175,14 @@ if (resStatus !== 200) {
     let binaryBody;
     if (isQuanX) {
         binaryBody = new Uint8Array($response.bodyBytes);
+    } else if ($response.body instanceof ArrayBuffer) {
+        binaryBody = new Uint8Array($response.body);
     } else if ($response.body instanceof Uint8Array) {
         binaryBody = $response.body;
     } else if ($response.body && $response.body.buffer instanceof ArrayBuffer) {
         binaryBody = new Uint8Array($response.body.buffer, $response.body.byteOffset, $response.body.byteLength);
     } else if (typeof $response.body === "string") {
-        binaryBody = new TextEncoder().encode($response.body);
+        binaryBody = utf8Bytes($response.body);
     } else {
         binaryBody = new Uint8Array(0);
     }
@@ -185,7 +225,24 @@ if (resStatus !== 200) {
 
 // ==================== CẤU HÌNH THUỘC TÍNH TÀI KHOẢN ====================
 function processMapObj(accountAttributesMapObj) {
-    accountAttributesMapObj['smart-shuffle'] = {stringValue : 'AVAILABLE'};
+    // Reference: GUI_ANH_VU.md. Playback and DRM are never routed here.
+    ['smart-shuffle', 'on-demand-trial', 'on-demand-trial-in-progress',
+     'ad-use-adlogic', 'ad-catalogues', 'at-signal', 'is-eligible-for-trial',
+     'is-eligible-for-upsell', 'upsell-state', 'ad-session-persistence',
+     'ad-formats-preroll-video', 'is-premium-eligible'].forEach(key => delete accountAttributesMapObj[key]);
+    for (let i = 1; i <= 100; i++) delete accountAttributesMapObj['is-premium-eligible-v' + i];
+    ['tablet', 'can_play_on_demand', 'unlimited', 'unlimited_skips'].forEach(key => {
+        accountAttributesMapObj[key] = {boolValue: true};
+    });
+    ['shuffle-eligible', 'supports_high_bitrate'].forEach(key => {
+        accountAttributesMapObj[key] = {boolValue: false};
+    });
+    ['license', 'player-license-v2'].forEach(key => {
+        accountAttributesMapObj[key] = {stringValue: 'premium'};
+    });
+    ['plan-name', 'current-plan'].forEach(key => {
+        accountAttributesMapObj[key] = {stringValue: 'duyvinh09'};
+    });
     accountAttributesMapObj['is-euterpe'] = {boolValue : true};
     accountAttributesMapObj['has-audiobooks-subscription'] = {boolValue : true};
     accountAttributesMapObj['type'] = {stringValue : 'premium'};
@@ -200,7 +257,7 @@ function processMapObj(accountAttributesMapObj) {
     accountAttributesMapObj['can_use_superbird'] = {boolValue : true};
     accountAttributesMapObj['jam-social-session'] = {stringValue : 'EXPANDED'};
     accountAttributesMapObj['offline'] = {boolValue : true};
-    accountAttributesMapObj['audio-quality'] = {stringValue : '1'};
+    accountAttributesMapObj['audio-quality'] = {stringValue : '0'};
     accountAttributesMapObj['shuffle-algorithm'] = {stringValue : 'RANDOM'};
     accountAttributesMapObj['is-thalia'] = {boolValue : true};
     accountAttributesMapObj['shuffle'] = {boolValue : false};
@@ -210,13 +267,13 @@ function processMapObj(accountAttributesMapObj) {
     accountAttributesMapObj['nft-disabled'] = {stringValue : '1'};
     
     accountAttributesMapObj['libspotify'] = {boolValue : true};
-    accountAttributesMapObj['high-bitrate'] = {boolValue : true};
+    accountAttributesMapObj['high-bitrate'] = {boolValue : false};
     accountAttributesMapObj['unrestricted'] = {boolValue : true};
     accountAttributesMapObj['catalogue'] = {stringValue : 'premium'};
     accountAttributesMapObj['your-library-tags'] = {boolValue : true};
     accountAttributesMapObj['ads'] = {boolValue : false};
     accountAttributesMapObj['on-demand'] = {boolValue : true};
-    accountAttributesMapObj['name'] = {stringValue : 'Spotify Premium'};
+    accountAttributesMapObj['name'] = {stringValue : 'duyvinh09'};
     accountAttributesMapObj['loudness-levels'] = {stringValue : '1:-5.0,0.0,3.0:-2.0'};
     accountAttributesMapObj['product-expiry'] = {stringValue : endDateStr};
     accountAttributesMapObj['social-session'] = {boolValue : true};
@@ -226,7 +283,7 @@ function processMapObj(accountAttributesMapObj) {
     accountAttributesMapObj['financial-product'] = {stringValue : 'pr:premium,tc:0'};
     accountAttributesMapObj['streaming-rules'] = {stringValue : ''};
     accountAttributesMapObj['mixing-tools'] = {stringValue : 'EDIT'};
-    accountAttributesMapObj['mobile'] = {boolValue : true};
+    accountAttributesMapObj['mobile'] = {boolValue : false};
     accountAttributesMapObj['player-license'] = {stringValue : 'premium'};
     accountAttributesMapObj['com.spotify.madprops.use.ucs.product.state'] = {boolValue : true};
     accountAttributesMapObj['com.spotify.madprops.delivered.by.ucs'] = {boolValue : true};
